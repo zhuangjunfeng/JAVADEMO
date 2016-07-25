@@ -18,41 +18,62 @@ ul{
     padding: 0 16px;
 }
 /*header*/
+header{
+       background-color: #000;
+}
 .page-header{
-    margin-bottom: 0;
+
+    color: #fff;
+    margin: 0;
 }
 .col-md-12 h1 small,button,.back{
     float: right;
     margin-left: 30px;
 }
 .col-md-12 h1 small{
+     color: #fff;
     margin-top: 15px;
 }
 /*content*/
 .col-md-2{
+    overflow-x: hidden;
     padding-right: 0;
 }
 .col-md-10{
     border-left: 1px solid;
     border-color: #ddd;
 }
-.nav{
+.nav{  
+    width: 180px; 
     text-align: center;
+    background-color: #ddd;
 }
 .save{
 	margin-left: 220px;
 }
-
 .control{
 	float: left;
 	margin-top: 10px;
 }
+
 .page-switch{
 	position: absolute;
 	right: 230px;
 	bottom: 20px
 }
+.col-xs-5{
+    padding-top: 20px;
+    margin-left: 15px;
+}
 /*表格*/
+.table-responsive{
+    margin-top: 60px;
+}
+.table-responsive h2{
+    margin-left: 10px;
+    border-bottom: 1px solid;
+    border-color: #ddd;
+}
 .user-account input,
 .user-name input,.user-sex input,
 .user-password input

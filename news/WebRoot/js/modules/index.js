@@ -12,8 +12,6 @@ $(function(){
         }
 
     })
-
-
 //    点击编辑按钮，显示输入框，获取当前值
     var o_edit=document.getElementsByClassName("user_edit");
     var o_ok=document.getElementsByClassName("glyphicon-ok");
@@ -42,17 +40,16 @@ $(function(){
     $(o_ok).click(function(){
         $(this).hide();
         $(this).prev(".glyphicon-edit").show();
-
         var o_input=$(this).parent().siblings().not(".list-id").children("input");//获取input对象
         var o_span=$(this).parent().siblings().not(".list-id").children("span");//获取span对象
         /*
-         * 循环赋值给input
+         * 循环赋值给span
          * */
         for(var x=0;x<o_input.length;x++){
             var o_val=new Array();                              //o_val 存储span的html
             o_val[x]=$(o_input[x]).val();
             $(o_span[x]).html(o_val[x]);
-        }
+        }       
         $(this).parent().siblings().not(".list-id").children("input").hide();//隐藏input
     })
 

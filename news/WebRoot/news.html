@@ -12,7 +12,9 @@
                 <div class="col-md-12">
                     <h1 class="page-header">
                         新闻管理后台
-                        <button class=" btn btn-default "><a href="login.html">退出</a></button>
+                        <button class=" btn btn-default ">
+                            <a href="login.html">退出</a>
+                        </button>
                         <small>
                             欢迎您, <i id="login-user">123</i>
                         </small>
@@ -44,32 +46,35 @@
                             <input class="form-control" type="text"  placeholder="请输入关键词" sizing-addon2">
                             <a class="input-group-addon " href="javascript:;">搜索</a>
                         </div>
-                        <div class="input-group input-group-lg3 col-xs-3">
-                            <label class="input-group-addon" >作者:</label>
-                            <input class="form-control"  type="text" ></div>
-                        <div class="input-group input-group-lg3 col-xs-3">
+                        <div class="col-lg-6">
+                            <div class="input-group input-group-lg3">
+                                <label class="input-group-addon" >作者:</label>
+                                <input class="form-control"  type="text" ></div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="input-group input-group-lg3 ">
+                                <label class="input-group-addon">类型:</label>
+                                <select class="form-control">
+                                    <option >不限</option>
+                                    <option >热点新闻</option>
+                                    <option>财经新闻</option>
+                                    <option >娱乐新闻</option>
+                                    <option >体育新闻</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group input-group-lg3 col-xs-5">
                             <label class="input-group-addon">时间:</label>
                             <input class="form-control" type="text" name="time" id="time" placeholder="2016-5-10">
                             <input class="form-control" type="text" name="time" id="time" placeholder="2016-7-20"></div>
-                        <div class="input-group input-group-lg3 col-lg-3">
-                            <label class="input-group-addon">类型:</label>
-                            <select class="form-control">
-                                <option >不限</option>
-                                <option >热点新闻</option>
-                                <option>财经新闻</option>
-                                <option >娱乐新闻</option>
-                                <option >体育新闻</option>
-                            </select>
-                        </div>
+
                         <div class="control">
                             <button class="btn btn-default">删除</button>
                             <button class="btn btn-default">查询</button>
                         </div>
                     </form>
-                    <br>
-                    <br>
-                    <br>
                     <div class="table-responsive">
+                        <h2>新闻列表</h2>
                         <table class="table table-hover table-striped" >
                             <thead>
                                 <tr>
@@ -105,7 +110,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share"></span>
                                     </td>
@@ -130,7 +135,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share"></span>
                                     </td>
@@ -154,7 +159,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -178,7 +183,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -202,7 +207,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit" cannt-edit></span>
                                     </td>
@@ -226,7 +231,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -250,7 +255,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -274,7 +279,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -298,7 +303,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-                                         
+
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -321,7 +326,8 @@
                                         <span>2016-07-19  19：00</span>
                                     </td>
                                     <td class="user-edit">
-                                        <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>      <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
                                 </tr>
@@ -366,8 +372,8 @@
             </div>
         </div>
     </div>
-    <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/common/jquery-1.12.3.min.js"></script>
+    <script src="js/common/bootstrap.js"></script>
+    <script src="js/modules/index.js"></script>
 </body>
 </html>
