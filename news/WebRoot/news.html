@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>news</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"></head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                        新闻管理后台
+                        <button class=" btn btn-default">退出</button>
+                        <small>
+                            欢迎您, <i id="login-user">123</i>
+                        </small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <a  href="user.html">用户管理</a>
+                        </li>
+                        <li class="active">
+                            <a  href="javascript:;">新闻管理</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" col-md-10">
+                    <h1>
+                        新闻管理
+                        <a class="btn btn-primary back"  id="sizing-addon3" href="addnews.html">新增</a>
+                    </h1>
+                    <form action="">
+                        <div class="input-group input-group-lg">
+                            <input class="form-control" type="text"  placeholder="请输入关键词" sizing-addon2">
+                            <a class="input-group-addon " href="javascript:;">搜索</a>
+                        </div>
+                        <div class="input-group input-group-lg3 col-xs-3">
+                            <label class="input-group-addon" >作者:</label>
+                            <input class="form-control"  type="text" ></div>
+                        <div class="input-group input-group-lg3 col-xs-3">
+                            <label class="input-group-addon">时间:</label>
+                            <input class="form-control" type="text" name="time" id="time" placeholder="2016-5-10">
+                            <input class="form-control" type="text" name="time" id="time" placeholder="2016-7-20"></div>
+                        <div class="input-group input-group-lg3 col-lg-3">
+                            <label class="input-group-addon">类型:</label>
+                            <select class="form-control">
+                                <option >不限</option>
+                                <option >热点新闻</option>
+                                <option>财经新闻</option>
+                                <option >娱乐新闻</option>
+                                <option >体育新闻</option>
+                            </select>
+                        </div>
+                        <div class="control">
+                            <button class="btn btn-default">删除</button>
+                            <button class="btn btn-default">查询</button>
+                        </div>
+                    </form>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="table-responsive">
+                        <table class="table table-hover" >
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input id="checked-all" type="checkbox">
+                                        <label>全选</label>
+                                    </th>
+                                    <th>标&nbsp;&nbsp;题</th>
+                                    <th>作&nbsp;&nbsp;者</th>
+                                    <th>类&nbsp;&nbsp;型</th>
+                                    <th>时&nbsp;&nbsp;间</th>
+                                    <th>操&nbsp;&nbsp;作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>1</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <img src="images/red_spot.png">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>2</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <img src="images/red_spot.png">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>3</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>4</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>5</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit" cannt-edit></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>6</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>7</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>8</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>9</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>
+                                         
+                                        <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="list-id">
+                                        <input type="checkbox">
+                                        <label>10</label>
+                                    </td>
+                                    <td class="user-account">
+                                        <span>岛内有3-4套房 孩子还要努力读书吗？</span>
+                                    </td>
+                                    <td class="user-name">
+                                        <span>张三三</span>
+                                    </td>
+                                    <td class="user-sex">
+                                        <span>财经新闻</span>
+                                    </td>
+                                    <td class="user-mail">
+                                        <span>2016-07-19  19：00</span>
+                                    </td>
+                                    <td class="user-edit">
+                                        <a href="addnews.html"  class="glyphicon glyphicon-edit "></a>      <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
+                                        <span class="glyphicon glyphicon-share cannt-edit"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="pager">
+                            <li>
+                                <a  href="javascript:;">上一页</a>
+                            </li>
+                            <li>
+                                <a  href="javascript:;">下一页</a>
+                            </li>
+                        </ul>
+                        <div class="page-switch input-group input-group-lg3 col-lg-2">
+                            <input class="form-control"  type="text" >
+                            <a class="input-group-addon" href="javascript:;">go</a>
+                            <label class="input-group-addon">共25页</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        删除后将不可恢复，
+                    确认删除
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

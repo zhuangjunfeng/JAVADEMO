@@ -11,7 +11,7 @@ import com.util.BasicHibernateDao;
 @SuppressWarnings("unchecked")
 public class NewsDaoImpl extends BasicHibernateDao implements NewsDao
 {
-	//增加新闻
+	
 	public boolean addNews(News news)
 	{
 		try {

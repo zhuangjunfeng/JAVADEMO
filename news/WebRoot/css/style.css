@@ -1,0 +1,62 @@
+.save{
+	margin-left: 220px;
+}
+.col-md-12 h1 small,button,.back{
+	float: right;
+}
+.sizing-addon2{
+	padding: 0 16px;
+}
+.control{
+	float: left;
+	margin-top: 10px;
+}
+.page-switch{
+	position: absolute;
+	right: 230px;
+	bottom: 20px
+}
+.user-account input,
+.user-name input,.user-sex input,
+.user-password input
+{
+    max-width: 120px;
+    max-height: 30px;
+}
+.user-mail input{
+    max-width: 140px;
+    max-height: 30px;
+}
+
+.user-edit{
+    font-size: 26px;
+    line-height: 0;
+}
+.table th,.table td{
+    text-align: center;
+}
+.table thead{
+    margin-bottom: 3px;
+    background-color: #fff;
+}
+.table>thead>tr>th{
+    border-bottom: 0;
+    line-height: 1em;
+}
+.table>tbody>tr{
+    background-color: #fff;
+}
+.table>tbody>tr>td{
+    border-top:3px solid #f2f2f2;
+    line-height: 1em;
+}
+.table>tbody>tr>td:nth-of-type(1){
+    text-align: left;
+}
+.table>tbody>tr>td input[type=checkbox]{
+    margin-left:25%;
+}
+.table>tbody>tr>td input[type=text]{
+    display: none;
+    text-align: center;
+}
