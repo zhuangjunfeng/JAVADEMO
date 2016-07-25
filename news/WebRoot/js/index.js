@@ -15,12 +15,12 @@ $(function(){
 
 
 //    点击编辑按钮，显示输入框，获取当前值
-    var o_edit=document.getElementsByClassName("user-edit");
+    var o_edit=document.getElementsByClassName("user_edit");
     var o_ok=document.getElementsByClassName("glyphicon-ok");
     //第点击编辑按钮
     $(o_edit).click(function(){
         //切换icon
-       
+         $(this).hide();
         $(this).next(".glyphicon-ok").show();
         //替换内容
         $(this).parent().siblings().children("input").show();//显示input
@@ -40,7 +40,7 @@ $(function(){
     })
     //点击OK按钮
     $(o_ok).click(function(){
-        
+        $(this).hide();
         $(this).prev(".glyphicon-edit").show();
 
         var o_input=$(this).parent().siblings().not(".list-id").children("input");//获取input对象
