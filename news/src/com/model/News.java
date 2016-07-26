@@ -8,13 +8,10 @@ public class News implements java.io.Serializable {
 
 	// Fields
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer newsId;
 	private String newsType;
 	private String newsTitle;
+	private String newsAuthor;
 	private String newsContent;
 	private String editorTime;
 
@@ -31,10 +28,11 @@ public class News implements java.io.Serializable {
 
 	/** full constructor */
 	public News(Integer newsId, String newsType, String newsTitle,
-			String newsContent, String editorTime) {
+			String newsAuthor, String newsContent, String editorTime) {
 		this.newsId = newsId;
 		this.newsType = newsType;
 		this.newsTitle = newsTitle;
+		this.newsAuthor = newsAuthor;
 		this.newsContent = newsContent;
 		this.editorTime = editorTime;
 	}
@@ -63,6 +61,14 @@ public class News implements java.io.Serializable {
 
 	public void setNewsTitle(String newsTitle) {
 		this.newsTitle = newsTitle;
+	}
+
+	public String getNewsAuthor() {
+		return this.newsAuthor;
+	}
+
+	public void setNewsAuthor(String newsAuthor) {
+		this.newsAuthor = newsAuthor;
 	}
 
 	public String getNewsContent() {

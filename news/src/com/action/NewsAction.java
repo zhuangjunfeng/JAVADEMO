@@ -16,7 +16,6 @@ public class NewsAction extends BaseAction
 	public  News news;
 	public NewsService newsService;
 	public int AnewsId;
-	public  String newsName;
 	private String msg;
 	private int totalRecords;
 
@@ -27,21 +26,21 @@ public class NewsAction extends BaseAction
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public String addNewsForJSON(){
+	public String addNews(){
 		HttpServletRequest req = getRequest();
-		String newsId= req.getParameter("newsId");
 		String newsType = req.getParameter("newsType");
 		String newsTitle = req.getParameter("newsTitle");
 		String newsContent = req.getParameter("newsContent");
+		String newsAuthor=req.getParameter("newsAuthor");
 		String editorTime=req.getParameter("editorTime");
+	
 
-		news = new News();
-		AnewsId = Integer.parseInt(newsId);
-		news.setNewsId(AnewsId);	
+		news = new News();	
 		news.setNewsType(newsType);
 		news.setNewsTitle(newsTitle);
 		news.setNewsContent(newsContent);
 		news.setEditorTime(editorTime);
+		news.setNewsAuthor(newsAuthor);
 
 		Boolean res =newsService.addNews(news);
 		if (res) {
@@ -58,18 +57,18 @@ public class NewsAction extends BaseAction
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public String addNews() {
-		Boolean res =newsService.addNews(news);
-		if (res) {
-			NewsList = new ArrayList();
-			NewsList.add(news);
-			return SUCCESS;
-		} else {
-			return ERROR;
-		}
+//	public String addNews() {
+//		Boolean res =newsService.addNews(news);
+//		if (res) {
+//			NewsList = new ArrayList();
+//			NewsList.add(news);
+//			return SUCCESS;
+//		} else {
+//			return ERROR;
+//		}
 //		news.setNewsType("娛樂新聞");
 //		return SUCCESS;
-	}
+//	}
 	
 	/**
 	 * 删除新闻JSP方式
@@ -159,12 +158,7 @@ public class NewsAction extends BaseAction
 	public void setNewsService(NewsService newsService) {
 		this.newsService = newsService;
 	}
-	public String getNewsName() {
-		return newsName;
-	}
-	public void setNewsName(String newsName) {
-		this.newsName = newsName;
-	}
+
 	public int getTotalRecords() {
 		return totalRecords;
 	}
