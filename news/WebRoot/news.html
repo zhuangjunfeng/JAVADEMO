@@ -10,15 +10,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-header">
+                    <h2 class="page-header">
                         新闻管理后台
                         <button class=" btn btn-default ">
                             <a href="login.html">退出</a>
                         </button>
-                        <small>
+                        <small> 
                             欢迎您, <i id="login-user">123</i>
                         </small>
-                    </h1>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -42,10 +42,13 @@
                         <a class="btn btn-primary back"  id="sizing-addon3" href="add-news.html">新增</a>
                     </h1>
                     <form action="">
-                        <div class="input-group input-group-lg">
+                      <div class="col-lg-6">
+                        <div class="input-group input-group-lg3">
+                        <a class="input-group-addon search" href="javascript:;">搜索</a>
                             <input class="form-control" type="text"  placeholder="请输入关键词" sizing-addon2">
-                            <a class="input-group-addon " href="javascript:;">搜索</a>
+                            
                         </div>
+                    </div>
                         <div class="col-lg-6">
                             <div class="input-group input-group-lg3">
                                 <label class="input-group-addon" >作者:</label>
@@ -63,6 +66,7 @@
                                 </select>
                             </div>
                         </div>
+
                         <div class="input-group input-group-lg3 col-xs-5">
                             <label class="input-group-addon">时间:</label>
                             <input class="form-control" type="text" name="time" id="time" placeholder="2016-5-10">
@@ -74,7 +78,7 @@
                         </div>
                     </form>
                     <div class="table-responsive">
-                        <h2>新闻列表</h2>
+                        <h4>新闻列表</h4>
                         <table class="table table-hover table-striped" >
                             <thead>
                                 <tr>

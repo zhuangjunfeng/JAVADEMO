@@ -11,13 +11,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-header">
+                    <h2 class="page-header">
                         新闻管理后台
                         <button class=" btn btn-default"><a href="login.html">退出</a></button>
                         <small>
                             欢迎您, <i id="login-user">123</i>
                         </small>
-                    </h1>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -43,19 +43,19 @@
                     <ul>
                         <li>
                             <h3>
-                                <label  class="label label-primary">标题</label>
-                            </h3>
-                            <input type="text"  name="title" class="form-control"></li>
+                                <label >标题:</label>
+                            </h3></li>
+                            <li><input type="text"  name="title" class="form-control"></li>
                         <li>
                             <h3>
-                                <label  class="label label-primary">作者</label>
-                            </h3>
-                            <input type="text" name="autor" class="form-control"></li>
+                                <label  >作者:</label>
+                            </h3></li>
+                            <li><input type="text" name="autor" class="form-control"></li>
                         <li>
                             <h3>
-                                <label class="label label-primary" >类型</label>
-                            </h3>
-                            <select class="form-control">
+                                <label  >类型:</label>
+                            </h3></li>
+                           <li> <select class="form-control">
                                 <option>热点新闻</option>
                                 <option>财经新闻</option>
                                 <option>娱乐新闻</option>
@@ -64,12 +64,12 @@
                         </li>
                         <li>
                             <h3>
-                                <label  class="label label-primary">时间</label>
-                            </h3>
-                            <input type="text" class="form-control"></li>
+                                <label>时间:</label>
+                            </h3></li>
+                            <li><input type="text" class="form-control"></li><br>
                         <li>
                             <h3>
-                                <label class="label label-primary">内容</label>
+                                <label>内容:</label>
                             </h3>
                         </li>
                     </ul>
@@ -78,7 +78,7 @@
 
             <script type="text/javascript" src="js/common/utf8-jsp/ueditor.config.js"></script>
             <script type="text/javascript" src="js/common/utf8-jsp/ueditor.all.js"></script>
-            <script type="text/plain" id="myEditor" style="width:800px"></script>
+            <script type="text/plain" id="myEditor" ></script>
             <script type="text/javascript">
         var editor = new UE.ui.Editor();
         editor.render("myEditor");
