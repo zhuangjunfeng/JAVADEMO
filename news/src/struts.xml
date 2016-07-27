@@ -28,8 +28,9 @@
 			</result>
 		</action>	
 		<action name="queryNews" class="newsAction" method="queryNews">
-			<result name="success" type="json"/>
+			<result name="success" type="json">
 			<param name="excludeProperties">newsService</param>
+			</result>
 			<result name="error">
 				/index.jsp
 			</result>

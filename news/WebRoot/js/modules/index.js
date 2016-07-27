@@ -12,7 +12,7 @@ $(function(){
             });
         }
 
-    })
+    });
 //    鐐瑰嚮缂栬緫鎸夐挳锛屾樉绀鸿緭鍏ユ锛岃幏鍙栧綋鍓嶅�
     var o_edit=document.getElementsByClassName("user_edit");
     var o_ok=document.getElementsByClassName("glyphicon-ok");
@@ -69,21 +69,64 @@ $("#save").click(function(){
     });
 });
 
+/**查询全部新闻**/
 
-$("#query").click(function query(){
+/**查询全部新闻**/
+function query(){
     $.ajax({
         type:"POST",
         url:"system/queryNews.shtml",
+        dataType:"json",
         data:"",
         success:function(data){
-            var newsList=data.NewsList;
+            var newsList=data.newsList;           
             var newsListHtml="<tr><td>新闻Id</td><td>新闻标题</td><td>新闻作者</td><td>新闻类型</td><td>时间</td><td>操作</td></tr>";
             $.each(newsList,function(i,n){
-                newsListHtml=newsListHtml+"<tr>"+"<td>"+n.newsId+"</td>"+"<td>"+n.newsTitle+"</td>"+"<td>"+n.newsAuthor+"</td>"+"<td>"+n.newsType+"</td>"+"<td>"+n.editorTime+"</td>"+"<td class='user-edit'>"+"<a href='add-news.html'  class='glyphicon glyphicon-edit '></a><a href='news-detail.html'  class='glyphicon glyphicon-eye-open '></a><span class='glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModal'></span><span class='glyphicon glyphicon-share'></span>"+"</td>"+"</tr>";
+                newsListHtml=newsListHtml+"<tr>"+"<td class='newsId'>"+n.newsId+"</td>"+"<td>"+n.newsTitle+"</td>"+"<td>"+n.newsAuthor+"</td>"+"<td>"+n.newsType+"</td>"+"<td>"+n.editorTime+"</td>"+"<td class='user-edit'>"+"<a href='add-news.html'  class='glyphicon glyphicon-edit '></a><a href='news-detail.html'  class='glyphicon glyphicon-eye-open '></a><span class='glyphicon glyphicon-remove'  data-toggle='modal' data-target='#myModal'></span><span class='glyphicon glyphicon-share'></span>"+"</td>"+"</tr>";
                 $("#show_list").html(newsListHtml);
-            });
-            alert(newsListHtml);
+    	});
+	}
+});
+}
+
+$("#query").click(function(){
+    query();
+});
+
+
+/*删除新闻*/
+function delNews(newsId){
+    var news="newsId="+newsId;
+    $.ajax({
+        type:"POST",
+        dataType:"json",
+        url:"system/delNews.shtml",
+        data:news,
+        success:function(){
+            query();
         }
     });
-});
+}
+
+
+
+
+/*更新新闻*/
+$("#save_btn").click(
+		function() {
+			var news ="&newsTitle="+ $("#e_newsTitle").val() + "&newsType="+ $("#e_newsType").val() + "&newsAuthor="
+					+ $("#e_Author").val() + "&editorTime=" + $("#e_editorTime").val()
+					+ "&newsContent=" +editor.getContent();
+			$.ajax({
+				type : "POST",
+				dataType : "json",
+				url : 'system/updateNews.shtml',
+				data : news,
+				success : function(data) {
+					query();
+				}
+			});
+		});
+
+   
 

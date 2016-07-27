@@ -138,7 +138,6 @@ public class NewsAction extends BaseAction
 	{
 		HttpServletRequest req = getRequest();
 		HttpSession session = req.getSession();
-		NewsList = new ArrayList();
 		NewsList = newsService.queryNews();
 		return SUCCESS;
 	}
@@ -169,6 +168,12 @@ public class NewsAction extends BaseAction
 	}
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+	public List getNewsList() {
+		return NewsList;
+	}
+	public void setNewsList(List newsList) {
+		NewsList = newsList;
 	}
 	
 }
