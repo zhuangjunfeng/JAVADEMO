@@ -27,11 +27,9 @@
 				/index.jsp
 			</result>
 		</action>	
-		
 		<action name="queryNews" class="newsAction" method="queryNews">
-			<result name="success" type="dispatcher">
-					/index.jsp
-			</result>
+			<result name="success" type="json"/>
+			<param name="excludeProperties">newsService</param>
 			<result name="error">
 				/index.jsp
 			</result>

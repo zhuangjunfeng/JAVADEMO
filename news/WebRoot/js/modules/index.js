@@ -57,7 +57,7 @@ $(function(){
 });
 
 $("#save").click(function(){
-	var newsContent=editor.getPlainTxt();
+	var newsContent=editor.getContent();
     var news="newsAuthor="+$("#newsAuthor").val()+"&newsTitle="+$("#newsTitle").val()
     			+"&newsType="+$("#newsType").val()+"&editorTime="+$("#editorTime").val()+"&newsContent="+newsContent;
 
@@ -65,12 +65,25 @@ $("#save").click(function(){
         url:"system/addNews.shtml",
         type:"POST",
         data:news,
-        success:function(){}
+        
     });
 });
 
-$("#test").click(function(){
-    alert(editor.getContent());
-})
 
+$("#query").click(function query(){
+    $.ajax({
+        type:"POST",
+        url:"system/queryNews.shtml",
+        data:"",
+        success:function(data){
+            var newsList=data.NewsList;
+            var newsListHtml="<tr><td>新闻Id</td><td>新闻标题</td><td>新闻作者</td><td>新闻类型</td><td>时间</td><td>操作</td></tr>";
+            $.each(newsList,function(i,n){
+                newsListHtml=newsListHtml+"<tr>"+"<td>"+n.newsId+"</td>"+"<td>"+n.newsTitle+"</td>"+"<td>"+n.newsAuthor+"</td>"+"<td>"+n.newsType+"</td>"+"<td>"+n.editorTime+"</td>"+"<td class='user-edit'>"+"<a href='add-news.html'  class='glyphicon glyphicon-edit '></a><a href='news-detail.html'  class='glyphicon glyphicon-eye-open '></a><span class='glyphicon glyphicon-remove' data-toggle='modal' data-target='#myModal'></span><span class='glyphicon glyphicon-share'></span>"+"</td>"+"</tr>";
+                $("#show_list").html(newsListHtml);
+            });
+            alert(newsListHtml);
+        }
+    });
+});
 

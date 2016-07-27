@@ -15,7 +15,7 @@
                         <button class=" btn btn-default ">
                             <a href="login.html">退出</a>
                         </button>
-                        <small> 
+                        <small>
                             欢迎您, <i id="login-user">123</i>
                         </small>
                     </h2>
@@ -42,13 +42,11 @@
                         <a class="btn btn-primary back"  id="sizing-addon3" href="add-news.html">新增</a>
                     </h1>
                     <form action="">
-                      <div class="col-lg-6">
-                        <div class="input-group input-group-lg3">
-                        <a class="input-group-addon search" href="javascript:;">搜索</a>
-                            <input class="form-control" type="text"  placeholder="请输入关键词" sizing-addon2">
-                            
+                        <div class="col-lg-6">
+                            <div class="input-group input-group-lg3">
+                                <a class="input-group-addon search" href="javascript:;">搜索</a>
+                                <input class="form-control" type="text"  placeholder="请输入关键词" sizing-addon2"></div>
                         </div>
-                    </div>
                         <div class="col-lg-6">
                             <div class="input-group input-group-lg3">
                                 <label class="input-group-addon" >作者:</label>
@@ -74,12 +72,12 @@
 
                         <div class="control">
                             <button class="btn btn-default">删除</button>
-                            <button class="btn btn-default">查询</button>
+                            <button class="btn btn-default" id="query">查询</button>
                         </div>
                     </form>
                     <div class="table-responsive">
                         <h4>新闻列表</h4>
-                        <table class="table table-hover table-striped" >
+                        <table class="table table-hover table-striped" id="show_list" >
                             <thead>
                                 <tr>
                                     <th>
@@ -114,7 +112,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share"></span>
                                     </td>
@@ -139,7 +137,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share"></span>
                                     </td>
@@ -163,7 +161,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -187,7 +185,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -211,7 +209,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit" cannt-edit></span>
                                     </td>
@@ -235,7 +233,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -259,7 +257,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -283,7 +281,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -307,7 +305,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
-
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -331,6 +329,7 @@
                                     </td>
                                     <td class="user-edit">
                                         <a href="add-news.html"  class="glyphicon glyphicon-edit "></a>
+                                        <a href="news-detail.html"  class="glyphicon glyphicon-eye-open "></a>
                                         <span class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></span>
                                         <span class="glyphicon glyphicon-share cannt-edit"></span>
                                     </td>
@@ -376,8 +375,8 @@
             </div>
         </div>
     </div>
-    <script src="js/common/jquery-1.12.3.min.js"></script>
-    <script src="js/common/bootstrap.js"></script>
-    <script src="js/modules/index.js"></script>
+    <script  src="js/common/jquery-1.12.3.min.js"></script>
+    <script  src="js/common/bootstrap.js"></script>
+    <script  src="js/modules/index.js"></script>
 </body>
 </html>

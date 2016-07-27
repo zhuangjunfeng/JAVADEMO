@@ -22,7 +22,7 @@ public class NewsAction extends BaseAction
 	public List NewsList;
 	
 	/**
-	 * Ìí¼ÓÐÂÎÅjson·½Ê½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jsonï¿½ï¿½Ê½
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
@@ -53,7 +53,7 @@ public class NewsAction extends BaseAction
 		}
 	}
 	/**
-	 * Ìí¼ÓÐÂÎÅJSP·½Ê½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JSPï¿½ï¿½Ê½
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
@@ -66,12 +66,12 @@ public class NewsAction extends BaseAction
 //		} else {
 //			return ERROR;
 //		}
-//		news.setNewsType("ŠÊ˜·ÐÂÂ„");
+//		news.setNewsType("ï¿½Ê˜ï¿½ï¿½ï¿½Â„");
 //		return SUCCESS;
 //	}
 	
 	/**
-	 * É¾³ýÐÂÎÅJSP·½Ê½
+	 * É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JSPï¿½ï¿½Ê½
 	 * @return
 	 */
 	public String delNews() 
@@ -105,9 +105,9 @@ public class NewsAction extends BaseAction
 	}
 	/**
 	 * 
-	 * @decription£º¸üÐÂÐÂÎÅJSPÐÎÊ½.
-	 * @date 2016-7-18ÉÏÎç10:51:03
-	 * @author£ºzhuangjf
+	 * @decriptionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JSPï¿½ï¿½Ê½.
+	 * @date 2016-7-18ï¿½ï¿½ï¿½ï¿½10:51:03
+	 * @authorï¿½ï¿½zhuangjf
 	 */
 	@SuppressWarnings("unused")
 	public String updateNews() 
@@ -129,9 +129,9 @@ public class NewsAction extends BaseAction
 	
 	/**
 	 * 
-	 * @decription£º²éÑ¯ËùÓÐÐÂÎÅJSP·½Ê½
-	 * @date 2016-7-18ÏÂÎç12:04:48
-	 * @author£ºzhuangjf
+	 * @decriptionï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JSPï¿½ï¿½Ê½
+	 * @date 2016-7-18ï¿½ï¿½ï¿½ï¿½12:04:48
+	 * @authorï¿½ï¿½zhuangjf
 	 */
 	@SuppressWarnings("unused")
 	public String queryNews()
@@ -140,7 +140,6 @@ public class NewsAction extends BaseAction
 		HttpSession session = req.getSession();
 		NewsList = new ArrayList();
 		NewsList = newsService.queryNews();
-			
 		return SUCCESS;
 	}
 	
