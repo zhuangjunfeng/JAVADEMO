@@ -29,6 +29,7 @@ header{
 .container{
     width: 100%;
     padding-left: 0;
+
 }
 .page-header{
     padding: 20px;
@@ -43,6 +44,13 @@ header{
     font-size: 16px;
      color: #fff;
     margin-top: 15px;
+}
+.news-detail-header{
+    background-color: #fff;
+    text-align: center;
+}
+.news-detail-header .container span{
+    padding:20px 30px;
 }
 /*content*/
 .col-md-2{
@@ -85,6 +93,14 @@ header{
 .col-xs-5{
     padding-top: 20px;
 
+}
+.news-content{
+    width: 1000px;
+    margin:0 auto;
+    font-size: 14px;
+    border: 1px solid;
+    border-color: #ddd;
+    border-bottom: none;
 }
 /*表格*/
 .table-responsive{

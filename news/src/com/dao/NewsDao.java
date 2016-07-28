@@ -5,15 +5,17 @@ import java.util.List;
 import com.model.News;
 public interface NewsDao 
 {
-	//тЖ╪спбне
+	//О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
 	public boolean addNews(News news);
-	//и╬ЁЩпбне
+	//и╬О©╫О©╫О©╫О©╫О©╫О©╫
 	public boolean delNews(News news);
-	//╦Эпбпбне
+	//О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
 	public boolean updateNews(News news);
-	//╡Иурпбб└
-	public News queryNews(int NewsId);
+	//О©╫О©╫О©╫О©╫О©╫О©╫б└
+	
 
 	public List<News> queryNews();
+	public News queryNews(int NewsId);
+	public List querySingleNews(int news_id);
 
 }

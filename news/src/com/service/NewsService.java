@@ -10,4 +10,5 @@ public interface NewsService
 	public boolean delNews(News news);
 	public boolean updateNews(News news);
 	public List<News> queryNews();
+	public List querySingleNews(Integer news_id);
 }

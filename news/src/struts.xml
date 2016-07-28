@@ -34,7 +34,13 @@
 			<result name="error">
 				/index.jsp
 			</result>
-		</action>	
+		</action>
+
+		<action name="querySingleNews" class="newsAction" method="querySingleNews">
+			<result name="success" type="json">
+			<param name="excludeProperties">newsService,newsList</param>
+			</result>
+		</action>		
 		<action name="login" class="sysUserAction" method="login">
 		<result name="success">
 				/index.jsp

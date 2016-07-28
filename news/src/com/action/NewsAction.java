@@ -20,11 +20,9 @@ public class NewsAction extends BaseAction
 	private int totalRecords;
 
 	public List NewsList;
+	public List singleList;
 	
-	/**
-	 * �������json��ʽ
-	 * @return
-	 */
+	/**增加新闻**/
 	@SuppressWarnings("unchecked")
 	public String addNews(){
 		HttpServletRequest req = getRequest();
@@ -53,7 +51,7 @@ public class NewsAction extends BaseAction
 		}
 	}
 	/**
-	 * �������JSP��ʽ
+	 * 增加新闻JSP
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
@@ -71,7 +69,7 @@ public class NewsAction extends BaseAction
 //	}
 	
 	/**
-	 * ɾ������JSP��ʽ
+	 * 删除新闻
 	 * @return
 	 */
 	public String delNews() 
@@ -105,15 +103,26 @@ public class NewsAction extends BaseAction
 	}
 	/**
 	 * 
-	 * @decription����������JSP��ʽ.
-	 * @date 2016-7-18����10:51:03
-	 * @author��zhuangjf
+	 * 更新新闻
 	 */
 	@SuppressWarnings("unused")
 	public String updateNews() 
 	{
 		HttpServletRequest req = getRequest();
-		HttpSession session = req.getSession();
+		String newsType = req.getParameter("newsType");
+		String newsTitle = req.getParameter("newsTitle");
+		String newsContent = req.getParameter("newsContent");
+		String newsAuthor=req.getParameter("newsAuthor");
+		String editorTime=req.getParameter("editorTime");
+		int newsId= Integer.parseInt(req.getParameter("newsId"));
+		
+		news = new News();	
+		news.setNewsType(newsType);
+		news.setNewsTitle(newsTitle);
+		news.setNewsContent(newsContent);
+		news.setEditorTime(editorTime);
+		news.setNewsAuthor(newsAuthor);
+		news.setNewsId(newsId);
 		if (newsService.updateNews(news))
 			{
 				msg="success";
@@ -128,10 +137,7 @@ public class NewsAction extends BaseAction
 	}
 	
 	/**
-	 * 
-	 * @decription����ѯ��������JSP��ʽ
-	 * @date 2016-7-18����12:04:48
-	 * @author��zhuangjf
+	 * 查询全部新闻
 	 */
 	@SuppressWarnings("unused")
 	public String queryNews()
@@ -140,6 +146,15 @@ public class NewsAction extends BaseAction
 		HttpSession session = req.getSession();
 		NewsList = newsService.queryNews();
 		return SUCCESS;
+	}
+	/**单条新闻查询**/
+	public String querySingleNews(){
+		HttpServletRequest req=getRequest();
+		HttpSession session = req.getSession();
+		int news_id=Integer.parseInt(req.getParameter("newsId"));
+		singleList=newsService.querySingleNews(news_id);
+		return SUCCESS;
+
 	}
 	
 	//-----------------set and get-----------------------
@@ -174,6 +189,12 @@ public class NewsAction extends BaseAction
 	}
 	public void setNewsList(List newsList) {
 		NewsList = newsList;
+	}
+	public List getSingleList() {
+		return singleList;
+	}
+	public void setSingleList(List singleList) {
+		this.singleList = singleList;
 	}
 	
 }

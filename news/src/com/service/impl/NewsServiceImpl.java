@@ -27,16 +27,16 @@ public class NewsServiceImpl implements NewsService
 	
 	public boolean updateNews(News news) 
 	{
-		News newsRs=newsDao.queryNews(news.getNewsId());
-		newsRs.setNewsType(news.getNewsType());
-		newsRs.setNewsContent(news.getNewsContent());
-		newsRs.setNewsTitle(news.getNewsTitle());
-		return newsDao.updateNews(newsRs);
+		return newsDao.updateNews(news);
 	}
 
 	public List<News> queryNews( ) 
 	{
 		return newsDao.queryNews();
+	}
+
+	public List querySingleNews(Integer news_id){
+		return newsDao.querySingleNews(news_id);
 	}
 	
 

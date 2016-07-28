@@ -23,7 +23,7 @@ public class NewsDaoImpl extends BasicHibernateDao implements NewsDao
         }
 		return true;
 	}
-	//删除新闻
+	//脡戮鲁媒脨脗脦脜
 	public boolean delNews(News news)
 	{
 			try {
@@ -35,7 +35,7 @@ public class NewsDaoImpl extends BasicHibernateDao implements NewsDao
 			return true;
 	}
 	
-	//更新新闻
+	//赂眉脨脗脨脗脦脜
 	public boolean updateNews(News news) {
 		try {
 			this.getSession().update(news);
@@ -62,6 +62,14 @@ public class NewsDaoImpl extends BasicHibernateDao implements NewsDao
 		List<News> list = query.list();
 		return list;
 	}
-	
+
+	/**鍗曟潯鏌ヨ**/
+	public List querySingleNews(int news_id){
+		Query query = this.getSession().createQuery("from News where NewsId=?");
+		query.setLong(0, news_id);
+		List<News> news_list=query.list();
+		return news_list;
+	}
+
 }
 
