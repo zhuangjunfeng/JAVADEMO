@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.hibernate.Query;
 
-
 import com.dao.NewsDao;
 import com.model.News;
 import com.util.BasicHibernateDao;
@@ -64,6 +63,7 @@ public class NewsDaoImpl extends BasicHibernateDao implements NewsDao
 	}
 
 	/**单条查询**/
+	@SuppressWarnings("rawtypes")
 	public List querySingleNews(int news_id){
 		Query query = this.getSession().createQuery("from News where NewsId=?");
 		query.setLong(0, news_id);

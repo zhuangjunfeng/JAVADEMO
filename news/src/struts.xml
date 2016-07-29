@@ -15,8 +15,21 @@
 				/error.html
 			</result>
 		</action>
+		<action name="addSysUser" class="sysUserAction" method="addSysUser">
+			<result name="success">
+				/success.html
+			</result>
+			<result name="error">
+				/error.html
+			</result>
+		</action>
+		
 		<action name="delNews" class="newsAction" method="delNews">
 			<result name="success" type="chain">queryNews</result>
+		</action>
+		
+		<action name="delSysUser" class="sysUserAction" method="delSysUser">
+			<result name="success" type="chain">querySysUser</result>
 		</action>
 		
 			<action name="updateNews" class="newsAction" method="updateNews">
@@ -27,9 +40,27 @@
 				/index.jsp
 			</result>
 		</action>	
+		
+		<action name="updateSysUser" class="sysUserAction" method="updateSysUser">
+			<result name="success" >
+					/index.jsp
+			</result>
+			<result name="error">
+				/index.jsp
+			</result>
+		</action>	
+		
 		<action name="queryNews" class="newsAction" method="queryNews">
 			<result name="success" type="json">
 			<param name="excludeProperties">newsService</param>
+			</result>
+			<result name="error">
+				/index.jsp
+			</result>
+		</action>
+		<action name="querySysUser" class="sysUserAction" method="querySysUser">
+			<result name="success" type="json">
+			<param name="excludeProperties">sysUserService</param>
 			</result>
 			<result name="error">
 				/index.jsp
@@ -40,7 +71,14 @@
 			<result name="success" type="json">
 			<param name="excludeProperties">newsService,newsList</param>
 			</result>
+		</action>
+		
+		<action name="querySingleSysUser" class="sysUserAction" method="querySingleSysUser">
+			<result name="success" type="json">
+			<param name="excludeProperties">sysUserService,userList</param>
+			</result>
 		</action>		
+				
 		<action name="login" class="sysUserAction" method="login">
 		<result name="success">
 				/index.jsp

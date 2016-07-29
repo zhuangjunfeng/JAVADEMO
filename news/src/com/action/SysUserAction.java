@@ -1,5 +1,7 @@
 package com.action;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,18 +14,20 @@ public class SysUserAction extends BaseAction {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public  SysUser user;
+	public  SysUser sysUser;
 	public String usersName;
 	public String password;
 	public String msg;
 	public SysUserService sysUserService;
+	public List userList;
+	public List singleUserList;
+	
 	/**
 	 * 
-	 * @decription£∫µ«¬º—È÷§
-	 * @date 2016-7-18œ¬ŒÁ2:02:18
-	 * @author£∫zhuangjf
+	 * @decriptionÔºöÁôªÂΩïÈ™åËØÅ
+	 * @date 2016-7-29‰∏äÂçà10:27:14
+	 * @authorÔºözhuangjf
 	 */
-	
 	public String login() 
 	{
 		HttpServletRequest req = getRequest();
@@ -35,46 +39,201 @@ public class SysUserAction extends BaseAction {
 				msg = "success";
 				session.setAttribute("User", UserRs);
 			} else {
-				msg = "’À∫≈√‹¬Î¥ÌŒÛ";
+				msg = "error";
 			}			
 		}
 		else {
-			msg = "’À∫≈√‹¬Î≤ªƒ‹Œ™ø’";
+			msg = "error";
 			return ERROR;
 		}
 		return SUCCESS;			
 	}
-	public SysUser getUser() {
-		return user;
+	
+	/**
+	 * 
+	 * @decriptionÔºöÂ¢ûÂä†Êñ∞Èóª
+	 * @date 2016-7-29‰∏äÂçà11:03:46
+	 * @authorÔºözhuangjf
+	 */
+	public String addSysUser(){
+		HttpServletRequest req = getRequest();
+		String yhxm = req.getParameter("yhxm");
+		String password= req.getParameter("password");
+		String yhxb = req.getParameter("yhxb");
+		String yhzh=req.getParameter("yhzh");
+		String yhyx=req.getParameter("yhyx");
+	
+
+		sysUser = new SysUser();	
+		sysUser.setYhzh(yhzh);
+		sysUser.setYhyx(yhyx);
+		sysUser.setYhxm(yhxm);
+		sysUser.setPassword(password);
+		sysUser.setYhxb(yhxb);
+
+		Boolean res =sysUserService.addSysUser(sysUser);
+		if (res) {
+			userList.add(sysUser);
+			return SUCCESS;
+		} else {
+			return null;
+		}
 	}
-	public void setUser(SysUser user) {
-		this.user = user;
+	/**
+	 * 
+	 * @decriptionÔºöÂà†Èô§Áî®Êà∑
+	 * @date 2016-7-29‰∏äÂçà11:04:28
+	 * @authorÔºözhuangjf
+	 */
+	public String delSysUser() 
+	{
+		HttpServletRequest req = getRequest();
+		String yhId=req.getParameter("yhId");
+		int YhId=Integer.parseInt(yhId);
+		if(YhId!=0)
+		{
+			SysUser sysUserObj=new SysUser();
+			sysUserObj.setYhId(YhId);
+		
+			if (sysUserService.delSysUser(sysUserObj)) 
+			{
+				msg = "success";
+				return SUCCESS;
+			} 
+			else 
+			{
+				msg = "error_sys";
+				return ERROR;
+			}
+		}
+		else
+		{
+			msg = "error_none";
+			return ERROR;
+		}
 	}
+
+	public String updateSysUser() 
+	{
+		HttpServletRequest req = getRequest();
+		String yhxm = req.getParameter("yhxm");
+		String password= req.getParameter("password");
+		String yhxb = req.getParameter("yhxb");
+		String yhzh=req.getParameter("yhzh");
+		String yhyx=req.getParameter("yhyx");
+		int yhId= Integer.parseInt(req.getParameter("yhId"));
+	
+
+		sysUser = new SysUser();	
+		sysUser.setYhzh(yhzh);
+		sysUser.setYhyx(yhyx);
+		sysUser.setYhxm(yhxm);
+		sysUser.setPassword(password);
+		sysUser.setYhxb(yhxb);
+		sysUser.setYhId(yhId);
+		if (sysUserService.updateSysUsers(sysUser))
+			{
+				msg="success";
+				return SUCCESS;
+			}
+		else
+			{
+				msg="error";
+				return ERROR;
+			}		
+		
+	}
+
+	/**
+	 * 
+	 * @decriptionÔºöÊü•ËØ¢Áî®Êà∑
+	 * @date 2016-7-29‰∏äÂçà11:44:13
+	 * @authorÔºözhuangjf
+	 */
+	public String querySysUser()
+	{
+		HttpServletRequest req = getRequest();
+		@SuppressWarnings("unused")
+		HttpSession session = req.getSession();
+		userList = sysUserService.querySysUsers();
+		return SUCCESS;
+	}
+	
+	@SuppressWarnings("unused")
+	public String querySingleSysUser(){
+		HttpServletRequest req=getRequest();
+		HttpSession session = req.getSession();
+		int yh_id=Integer.parseInt(req.getParameter("yhId"));
+		singleUserList=sysUserService.querySingleSysUser(yh_id);
+		return SUCCESS;
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	//-----------------set and get-----------------------
+	
+	public SysUser getSysUser() {
+		return sysUser;
+	}
+
+	public void setSysUser(SysUser sysUser) {
+		this.sysUser = sysUser;
+	}
+
 	public String getUsersName() {
 		return usersName;
 	}
+
 	public void setUsersName(String usersName) {
 		this.usersName = usersName;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getMsg() {
 		return msg;
 	}
+
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
+
 	public SysUserService getSysUserService() {
 		return sysUserService;
 	}
+
 	public void setSysUserService(SysUserService sysUserService) {
 		this.sysUserService = sysUserService;
 	}
 
+	@SuppressWarnings("rawtypes")
+	public List getUserList() {
+		return userList;
+	}
 
+	public void setUserList(@SuppressWarnings("rawtypes") List userList) {
+		this.userList = userList;
+	}
 
+	@SuppressWarnings("rawtypes")
+	public List getSingleUserList() {
+		return singleUserList;
+	}
+
+	public void setSingleUserList(@SuppressWarnings("rawtypes") List singleUserList) {
+		this.singleUserList = singleUserList;
+	}
+	
 }
+

@@ -19,6 +19,69 @@ public class SysUserServiceImpl implements SysUserService
 		}
 		return null;
 	}
+	
+	/**
+	 * 增加用户
+	 */
+	public   boolean addSysUser(SysUser sysUser)
+	{
+		return sysUserDao.addSysUser(sysUser);
+	}
+	
+	
+	/**
+	 * 删除用户
+	 */
+	public   boolean delSysUser(SysUser sysUser){
+		try {
+			sysUserDao.delSysUser(sysUser);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * 
+	 * @decription：更新用户
+	 * @date 2016-7-29上午11:40:17
+	 * @author：zhuangjf
+	 */
+	public   boolean updateSysUsers(SysUser sysUser){
+		return sysUserDao.updateSysUsers(sysUser);
+	}
+	/**
+	 * 
+	 * @decription：查询用户
+	 * @date 2016-7-29上午11:46:55
+	 * @author：zhuangjf
+	 */
+	public List<SysUser> querySysUsers(){
+		return sysUserDao.querySysUsers();
+	}
+	/**
+	 * 
+	 * @decription：单条查询用户
+	 * @date 2016-7-29上午11:59:05
+	 * @author：zhuangjf
+	 */
+	public List querySingleSysUser(Integer yh_id){
+		return sysUserDao.querySingleSysUser(yh_id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//------------get And set----------------------
 	public SysUserDao getSysUserDao() {
 		return sysUserDao;
 	}

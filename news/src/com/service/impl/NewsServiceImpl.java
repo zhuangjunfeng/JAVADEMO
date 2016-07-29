@@ -35,6 +35,7 @@ public class NewsServiceImpl implements NewsService
 		return newsDao.queryNews();
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List querySingleNews(Integer news_id){
 		return newsDao.querySingleNews(news_id);
 	}

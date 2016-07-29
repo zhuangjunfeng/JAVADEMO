@@ -42,7 +42,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/model/News.hbm.xml</value>
-				<value>com/model/Sysuser.hbm.xml</value>
+				<value>com/model/SysUser.hbm.xml</value>
 				</list>
 		</property>
 	</bean>

@@ -54,7 +54,7 @@ public class NewsAction extends BaseAction
 	 * 增加新闻JSP
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
+	
 //	public String addNews() {
 //		Boolean res =newsService.addNews(news);
 //		if (res) {
@@ -105,7 +105,6 @@ public class NewsAction extends BaseAction
 	 * 
 	 * 更新新闻
 	 */
-	@SuppressWarnings("unused")
 	public String updateNews() 
 	{
 		HttpServletRequest req = getRequest();
@@ -148,6 +147,7 @@ public class NewsAction extends BaseAction
 		return SUCCESS;
 	}
 	/**单条新闻查询**/
+	@SuppressWarnings("unused")
 	public String querySingleNews(){
 		HttpServletRequest req=getRequest();
 		HttpSession session = req.getSession();
