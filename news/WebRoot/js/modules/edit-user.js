@@ -50,7 +50,14 @@ function queryUser(){
             	delUser($(this).attr("data-id"));
             });   
             $(".update-news").click(function(){
-            	updateUser();
+            	
+            	var yhId=$(this).attr("data-id");
+            	var yhxm=$(this).parent().siblings().children(".e_yhxm").val();
+            	var yhxb=$(this).parent().siblings().children(".e_yhxb").val();
+            	var yhyx= $(this).parent().siblings().children(".e_yhyx").val();
+            	var password=$(this).parent().siblings().children(".e_password").val();
+            	var yhzh=$(this).parent().siblings().children(".e_yhzh").val();            	
+            	updateUser(yhId,yhxm,yhxb,yhyx,yhzh,password);
             });
             
             /**user<span> <input>切换**/
@@ -99,22 +106,22 @@ function queryUser(){
     });
 }
 /**更新用户信息**/
-function updateUser(){
-    var params ="yhxm="+$(this).parent().siblings().children(".e_yhxm").val() 
-            	+ "&yhxb="+ $(this).parent().siblings().children(".e_yhxb").val() 
-            	+ "&yhyx="+ $(this).parent().siblings().children(".e_yhyx").val()
-            	+ "&password=" + $(this).parent().siblings().children(".e_password").val()
-            	+"&yhzh="+$(this).parent().siblings().children(".e_yhzh").val();
-    alert(params);
-//    $.ajax({
-//        type : "POST",
-//        dataType : "json",
-//        url : 'system/updateSysUser.shtml',
-//        data : params,
-//        success : function(data) {
-//        	queryUser();
-//        }
-//    });     
+function updateUser(yhId,yhxm,yhxb,yhyx,yhzh,password){
+    var params ="yhxm="+yhxm 
+            	+ "&yhxb="+yhxb 
+            	+ "&yhyx="+yhyx
+            	+ "&password=" +password
+            	+"&yhzh="+yhzh
+            	+"&yhId="+yhId;
+    $.ajax({
+        type : "POST",
+        dataType : "json",
+        url : 'system/updateSysUser.shtml',
+        data : params,
+        success : function(data) {
+        	queryUser();
+        }
+    });     
 }
 /*删除用户*/
 function delUser(yhId){
