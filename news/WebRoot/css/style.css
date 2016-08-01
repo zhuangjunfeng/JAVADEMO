@@ -102,7 +102,7 @@ header{
     border-color: #ddd;
     border-bottom: none;
 }
-/*表格*/
+
 .table-responsive{
     margin-top: 60px;
 }
@@ -156,7 +156,7 @@ header{
     display: none;
     text-align: center;
 }
-/**UEditor设置**/
+
 #myEditor{
     width:915px;
     min-height:400px;

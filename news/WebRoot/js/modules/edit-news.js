@@ -4,7 +4,7 @@ $(function(){
         updateNews();
     });
  
-   querySingleNews(GetRequest().newsId);
+   querySingleNews();
 });
 
 /*****************独立方法*********************/
@@ -12,8 +12,11 @@ $(function(){
  * 新闻单条查询
  * 
  */
-function querySingleNews(news_id){
-    var param="newsId="+news_id;
+function querySingleNews(){
+    var param="newsId="+GetRequest().newsId;
+    
+    
+    
     $.ajax({
         type:"POST",
         dataType:"json",
@@ -35,18 +38,20 @@ function querySingleNews(news_id){
 }
 /**更新新闻**/
 function updateNews(){
-    var params ="newsTitle="+$("#e_newsTitle").val() 
-            + "&newsType="+ $("#e_newsType").val() 
-            + "&newsAuthor="+ $("#e_newsAuthor").val() 
-            + "&editorTime=" + $("#e_editorTime").val()
-            + "&newsContent=" +editor.getContent()+"&newsId="+GetRequest().newsId;
     $.ajax({
         type : "POST",
         dataType : "json",
         url : 'system/updateNews.shtml',
-        data : params,
+        data : {
+        	newsId:GetRequest().newsId,
+        	newsTitle:$("#e_newsTitle").val(),
+        	newsAuthor:$("#e_newsAuthor").val(),
+            editorTime:$("#e_editorTime").val(),
+        	newsType:$("#e_newsType").val(),
+        	newsContent:editor.getContent()
+        },
         success : function(data) {
-            query();
+        	window.location.href="news.html";
         }
     });     
 }

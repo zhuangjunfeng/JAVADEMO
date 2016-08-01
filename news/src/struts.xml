@@ -2,11 +2,11 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.action.extension" value="shtml" />
-	<package name="system"  extends="struts-default" namespace="/system">
+	<package name="system" extends="struts-default" namespace="/system">
 		<result-types>
 			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
 		</result-types>
-	
+
 		<action name="addNews" class="newsAction" method="addNews">
 			<result name="success">
 				/success.html
@@ -23,64 +23,58 @@
 				/error.html
 			</result>
 		</action>
-		
+
 		<action name="delNews" class="newsAction" method="delNews">
 			<result name="success" type="chain">queryNews</result>
 		</action>
-		
+
 		<action name="delSysUser" class="sysUserAction" method="delSysUser">
 			<result name="success" type="chain">querySysUser</result>
 		</action>
-		
-			<action name="updateNews" class="newsAction" method="updateNews">
-			<result name="success" >
-					/index.jsp
+
+		<action name="updateNews" class="newsAction" method="updateNews">
+			<result name="success" type="json">
+				<param name="excludeProperties">newsService</param>
 			</result>
-			<result name="error">
-				/index.jsp
-			</result>
-		</action>	
-		
+		</action>
+
 		<action name="updateSysUser" class="sysUserAction" method="updateSysUser">
-			<result name="success" >
-					/index.jsp
-			</result>
-			<result name="error">
+			<result name="success">
 				/index.jsp
 			</result>
-		</action>	
-		
+		</action>
+
 		<action name="queryNews" class="newsAction" method="queryNews">
 			<result name="success" type="json">
-			<param name="excludeProperties">newsService</param>
+				<param name="excludeProperties">newsService</param>
 			</result>
 
 		</action>
 		<action name="querySysUser" class="sysUserAction" method="querySysUser">
 			<result name="success" type="json">
-			<param name="excludeProperties">sysUserService</param>
+				<param name="excludeProperties">sysUserService</param>
 			</result>
 
 		</action>
 
 		<action name="querySingleNews" class="newsAction" method="querySingleNews">
 			<result name="success" type="json">
-			<param name="excludeProperties">newsService,newsList</param>
+				<param name="excludeProperties">newsService,newsList</param>
 			</result>
 		</action>
-		
+
 		<action name="querySingleSysUser" class="sysUserAction" method="querySingleSysUser">
 			<result name="success" type="json">
-			<param name="excludeProperties">sysUserService,userList</param>
+				<param name="excludeProperties">sysUserService,userList</param>
 			</result>
-		</action>		
-				
-		<action name="login" class="sysUserAction" method="login">
-		<result name="success">
-				/news.html
-			</result>			
+		</action>
 
-		</action>		
-		
+		<action name="login" class="sysUserAction" method="login">
+			<result name="success">
+				/news.html
+			</result>
+
+		</action>
+
 	</package>
 </struts>    

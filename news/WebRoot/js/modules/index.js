@@ -41,7 +41,7 @@ function query(){
             	+n.newsType+"</td><td>"
             	+n.editorTime+"</td><td class='user-edit'><a  class='glyphicon glyphicon-edit news-edit' href='edit-news.html?newsId="
             	+n.newsId+"'></a><a   class='glyphicon glyphicon-eye-open' href='news-detail.html?newsId="
-            	+n.newsId+"'></a><span class='glyphicon glyphicon-remove del-news'  data-toggle='modal' data-target='#myModal' data-id='"
+            	+n.newsId+"'></a><span class='glyphicon glyphicon-remove del-news'  data-id='"
             	+n.newsId+"'></span><span class='glyphicon glyphicon-share'></span></td></tr>";
             });
             $("#show_list").html(newsListHtml);
