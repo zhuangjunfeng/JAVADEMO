@@ -6,7 +6,7 @@ import com.model.SysUser;
 public interface SysUserDao 
 {
 	
-	public List<SysUser> query(String usersName);
+	public SysUser query(String yhzh);
 	public boolean addSysUser(SysUser sysUser);
 	public boolean delSysUser(SysUser sysUser);
 	public boolean updateSysUsers(SysUser sysUser);

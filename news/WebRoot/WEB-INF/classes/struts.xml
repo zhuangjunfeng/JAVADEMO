@@ -54,17 +54,13 @@
 			<result name="success" type="json">
 			<param name="excludeProperties">newsService</param>
 			</result>
-			<result name="error">
-				/index.jsp
-			</result>
+
 		</action>
 		<action name="querySysUser" class="sysUserAction" method="querySysUser">
 			<result name="success" type="json">
 			<param name="excludeProperties">sysUserService</param>
 			</result>
-			<result name="error">
-				/index.jsp
-			</result>
+
 		</action>
 
 		<action name="querySingleNews" class="newsAction" method="querySingleNews">
@@ -81,11 +77,9 @@
 				
 		<action name="login" class="sysUserAction" method="login">
 		<result name="success">
-				/index.jsp
+				/news.html
 			</result>			
-			<result name="error">
-				/login.jsp
-			</result>
+
 		</action>		
 		
 	</package>

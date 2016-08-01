@@ -6,16 +6,22 @@ import com.dao.SysUserDao;
 import com.model.SysUser;
 import com.service.SysUserService;
 
+
 public class SysUserServiceImpl implements SysUserService
 {
 	private SysUserDao sysUserDao;
-	public SysUser login(String usersName, String password)
+	public SysUser login(String yhzh, String password)
 	{		
-		List<SysUser> list=sysUserDao.query(usersName);
-		SysUser User = (SysUser)list;		
-		if (!User.equals(null)) {
-			if (User.getPassword().equals(password))
-				return User;
+//		List<SysUser> list=sysUserDao.query(yhzh);
+//		SysUser User =list;		
+//		if (!User.equals("")) {
+//			if (User.getPassword().equals(password))
+//				return User;
+//		}
+		SysUser sysUser = sysUserDao.query(yhzh);
+		if (sysUser != null) {
+			if (sysUser.getPassword().equals(password))
+				return sysUser;
 		}
 		return null;
 	}

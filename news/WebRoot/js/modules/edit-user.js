@@ -49,8 +49,7 @@ function queryUser(){
             $(".del-user").click(function(){
             	delUser($(this).attr("data-id"));
             });   
-            $(".update-news").click(function(){
-            	
+            $(".update-news").click(function(){           	
             	var yhId=$(this).attr("data-id");
             	var yhxm=$(this).parent().siblings().children(".e_yhxm").val();
             	var yhxb=$(this).parent().siblings().children(".e_yhxb").val();

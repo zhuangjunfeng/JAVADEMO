@@ -32,9 +32,11 @@ public class SysUserAction extends BaseAction {
 	{
 		HttpServletRequest req = getRequest();
 		HttpSession session = req.getSession();
-		if (!usersName.equals("") && !password.equals(""))
+		String yhzh=req.getParameter("yhzh");
+		String password= req.getParameter("password");
+		if (!yhzh.equals("") && !password.equals(""))
 		{
-			SysUser UserRs = sysUserService.login(usersName,password);
+			SysUser UserRs = sysUserService.login(yhzh,password);
 			if (!UserRs.equals("")) {
 				msg = "success";
 				session.setAttribute("User", UserRs);
@@ -51,7 +53,7 @@ public class SysUserAction extends BaseAction {
 	
 	/**
 	 * 
-	 * @decription：增加新闻
+	 * @decription：增加用户
 	 * @date 2016-7-29上午11:03:46
 	 * @author：zhuangjf
 	 */

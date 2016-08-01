@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.dao.SysUserDao;
-import com.model.News;
+
 import com.model.SysUser;
 
 
@@ -16,13 +16,13 @@ public class SysUserDaoImpl implements SysUserDao
 {
 	private SessionFactory sessionFactory;
 	@SuppressWarnings("unchecked")
-	public 	List<SysUser> query(String usersName)
+	public 	SysUser query(String yhzh)
 	{	
 		
-		Query query = this.getSession().createQuery("from SysUser where Usersname=��");
-		List<SysUser> list = query.list();	
-		return list;
-				
+		Query query = this.getSession().createQuery("from SysUser where Yhzh=?");
+		query.setParameter(0,yhzh);
+		List<SysUser> list = query.list();
+		return list.size() == 0 ? null : list.get(0);				
 	}
 	
 	public boolean addSysUser(SysUser sysUser){

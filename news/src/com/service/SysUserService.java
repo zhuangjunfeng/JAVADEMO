@@ -6,7 +6,7 @@ import com.model.SysUser;
 
 public interface SysUserService 
 {
-	public SysUser login(String usersName, String password);
+	public SysUser login(String yhzh, String password);
 	public   boolean addSysUser(SysUser sysUser);
 	public   boolean delSysUser(SysUser sysUser);
 	public   boolean updateSysUsers(SysUser sysUser);
