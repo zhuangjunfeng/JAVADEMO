@@ -6,18 +6,22 @@ import com.dao.SysUserDao;
 import com.model.SysUser;
 import com.service.SysUserService;
 
-
+/**
+ * @decription：新闻管理用户模块Service实现类
+ * @author zhuangjf
+ *
+ */
 public class SysUserServiceImpl implements SysUserService
 {
 	private SysUserDao sysUserDao;
+	/**
+	 * @decription：登录验证
+	 * @author：zhuangjf
+	 * @param:yhzh 用户账户
+	 */
 	public SysUser login(String yhzh, String password)
 	{		
-//		List<SysUser> list=sysUserDao.query(yhzh);
-//		SysUser User =list;		
-//		if (!User.equals("")) {
-//			if (User.getPassword().equals(password))
-//				return User;
-//		}
+
 		SysUser sysUser = sysUserDao.query(yhzh);
 		if (sysUser != null) {
 			if (sysUser.getPassword().equals(password))
@@ -27,16 +31,16 @@ public class SysUserServiceImpl implements SysUserService
 	}
 	
 	/**
-	 * 增加用户
+	 * @decription:增加用户
+	 * @author:zhuangjf
 	 */
 	public   boolean addSysUser(SysUser sysUser)
 	{
 		return sysUserDao.addSysUser(sysUser);
 	}
-	
-	
 	/**
-	 * 删除用户
+	 * @decription:删除用户
+	 * @author:zhuangjf
 	 */
 	public   boolean delSysUser(SysUser sysUser){
 		try {

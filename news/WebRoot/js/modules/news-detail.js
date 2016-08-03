@@ -1,16 +1,11 @@
-
 $(function(){
-   $("#update-news").click(function(){
-        updateNews();
-    });
- 
-   detailNews(GetRequest().newsId);
+    detailNews(GetRequest().newsId);
 });
 
 /*****************独立方法*********************/
 /**
- * 新闻详情显示
- * 
+ * @decription：新闻详情显示
+ * @author：zhuangjf
  */
 function detailNews(news_id){
     var param="newsId="+news_id;
@@ -19,7 +14,12 @@ function detailNews(news_id){
         dataType:"json",
         url:"system/querySingleNews.shtml",
         data:param,
-        success:function(data){
+        error:function(XMLHttpRequest, textStatus, errorThrown){
+        	if(XMLHttpRequest.responseText=="loginError"){
+        		window.location.href="login.html";
+        	}
+        },
+        success:function(data){          	
             var singleList=data.singleList;
             var news=singleList[0];
             var news_content=news.newsContent;
@@ -27,15 +27,19 @@ function detailNews(news_id){
             	+news.newsTitle+"</b></h3><span>作者："
             	+news.newsAuthor+"</span><span>"
             	+news.newsType+"</span><span>"
-            	+news.editorTime+"</span>";
+            	+news.editorTime+"</span>";         
             $("#show_detail").html(detail_news);
             $("#detail_newsContent").html(news_content);
     }
     });
 }
-/**获取Url中的参数**/
+/**
+ * @decription：获取URL?后的字符串
+ * @author：zhuangjf
+ * @returns {theRequest}
+ */
 function GetRequest() { 
-    var url = location.search; //获取url中"?"符后的字串 
+    var url = location.search;
     var theRequest = new Object(); 
     if (url.indexOf("?") != -1) { 
     var str = url.substr(1); 

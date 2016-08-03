@@ -54,7 +54,6 @@
 			<result name="success" type="json">
 				<param name="excludeProperties">sysUserService</param>
 			</result>
-
 		</action>
 
 		<action name="querySingleNews" class="newsAction" method="querySingleNews">
@@ -70,10 +69,26 @@
 		</action>
 
 		<action name="login" class="sysUserAction" method="login">
-			<result name="success">
-				/news.html
+			<result name="success" type="json">
+			<param name="excludeProperties">sysUserService,userList,password</param>
 			</result>
-
+			<result name="error" type="json">
+			<param name="excludeProperties">sysUserService,userList,password</param>				
+			</result>
+		</action>
+		<action name="logout" class="sysUserAction" method="logout">
+			<result name="success" type="json">
+			<param name="excludeProperties">sysUserService,userList,password</param>
+			</result>
+			<result name="error" type="json">
+			<param name="excludeProperties">sysUserService,userList,password</param>				
+			</result>
+		</action>
+		
+		<action name="queryData" class="dictionaryAction" method="queryData">
+			<result name="success" type="json">
+				<param name="excludeProperties">application</param>
+			</result>
 		</action>
 
 	</package>

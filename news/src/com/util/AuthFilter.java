@@ -1,5 +1,6 @@
 package com.util;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,18 @@ public class AuthFilter implements Filter{
 		filterConfig = null;
 	}
 
+	public void loginJsonPath(ServletRequest arg0, ServletResponse arg1, FilterChain arg2) {
+		String authError = "loginError";
+		arg1.setContentType("text/javascript; charset=utf-8");
+		try {
+			PrintWriter out = arg1.getWriter();
+			out.print(authError);
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void loginPath(ServletRequest arg0, ServletResponse arg1, FilterChain arg2) {
 		String loginPath = "/login.html";
 		RequestDispatcher loginDispatcher = arg0.getRequestDispatcher(loginPath);
@@ -47,7 +60,11 @@ public class AuthFilter implements Filter{
 		}
 		return;
 	}
-	
+	/**
+	 * @decription：判断URL是否需要被过滤
+	 * @date 2016-8-2下午7:28:06
+	 * @author：zhuangjf
+	 */
 	public Boolean isAuth(String realUri) {
 		List<String> authAll =new ArrayList<String>(); 
 		authAll.add(0, "system/.*");
@@ -68,11 +85,19 @@ public class AuthFilter implements Filter{
 		String uri = req.getRequestURI();
 		int length = req.getContextPath().length();
 		String realUri = uri.substring(length+1, uri.length());
-		if (isAuth(realUri)) {
+		
+		String accept=req.getHeader("Accept");
+		
+		if (isAuth(realUri)&&realUri.indexOf("login.shtml")==-1) {
+			
 			SysUser sysUser = null;
-			sysUser = (SysUser) session.getAttribute("sysUser");
-			if (sysUser == null) {
-				loginPath(arg0, arg1, arg2);
+			sysUser = (SysUser) session.getAttribute("User");
+			if (sysUser == null) {	
+				if(accept.indexOf("application/json")>-1){
+					loginJsonPath(arg0, arg1, arg2);
+				}else{
+					loginPath(arg0, arg1, arg2);
+				}
 			}else{
 				commonPath(arg0, arg1, arg2);
 				return;

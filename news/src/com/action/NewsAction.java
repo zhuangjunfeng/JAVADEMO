@@ -1,5 +1,7 @@
 package com.action;
-
+/**
+ * 新闻管理新闻模块Action类
+ */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,12 @@ public class NewsAction extends BaseAction
 	public List NewsList;
 	public List singleList;
 	
-	/**增加新闻**/
+	/**
+	 * 
+	 * @decription：添加新闻
+	 * @date 2016-8-3下午11:16:05
+	 * @author：zhuangjf
+	 */
 	@SuppressWarnings("unchecked")
 	public String addNews(){
 		HttpServletRequest req = getRequest();
@@ -31,43 +38,21 @@ public class NewsAction extends BaseAction
 		String newsContent = req.getParameter("newsContent");
 		String newsAuthor=req.getParameter("newsAuthor");
 		String editorTime=req.getParameter("editorTime");
-	
-
 		news = new News();	
 		news.setNewsType(newsType);
 		news.setNewsTitle(newsTitle);
 		news.setNewsContent(newsContent);
 		news.setEditorTime(editorTime);
 		news.setNewsAuthor(newsAuthor);
-
 		Boolean res =newsService.addNews(news);
 		if (res) {
-			
 			NewsList = new ArrayList();
 			NewsList.add(news);
 			return SUCCESS;
 		} else {
 			return null;
 		}
-	}
-	/**
-	 * 增加新闻JSP
-	 * @return
-	 */
-	
-//	public String addNews() {
-//		Boolean res =newsService.addNews(news);
-//		if (res) {
-//			NewsList = new ArrayList();
-//			NewsList.add(news);
-//			return SUCCESS;
-//		} else {
-//			return ERROR;
-//		}
-//		news.setNewsType("�ʘ���");
-//		return SUCCESS;
-//	}
-	
+	}	
 	/**
 	 * 删除新闻
 	 * @return
@@ -103,7 +88,9 @@ public class NewsAction extends BaseAction
 	}
 	/**
 	 * 
-	 * 更新新闻
+	 * @decription：更新新闻
+	 * @date 2016-8-3下午11:17:07
+	 * @author：zhuangjf
 	 */
 	public String updateNews() 
 	{
@@ -136,7 +123,10 @@ public class NewsAction extends BaseAction
 	}
 	
 	/**
-	 * 查询全部新闻
+	 * 
+	 * @decription：查询全部新闻
+	 * @date 2016-8-3下午11:22:55
+	 * @author：zhuangjf
 	 */
 	@SuppressWarnings("unused")
 	public String queryNews()
@@ -146,7 +136,12 @@ public class NewsAction extends BaseAction
 		NewsList = newsService.queryNews();
 		return SUCCESS;
 	}
-	/**单条新闻查询**/
+	/**
+	 * 
+	 * @decription：单条查询新闻
+	 * @date 2016-8-3下午11:23:59
+	 * @author：zhuangjf
+	 */
 	@SuppressWarnings("unused")
 	public String querySingleNews(){
 		HttpServletRequest req=getRequest();
@@ -157,7 +152,7 @@ public class NewsAction extends BaseAction
 
 	}
 	
-	//-----------------set and get-----------------------
+	//-----------------set AND get-----------------------
 	public News getNews() {
 		return news;
 	}

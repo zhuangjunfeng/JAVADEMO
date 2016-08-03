@@ -43,6 +43,7 @@
 			<list>
 				<value>com/model/News.hbm.xml</value>
 				<value>com/model/SysUser.hbm.xml</value>
+				<value>com/model/Dictionary.hbm.xml</value>
 				</list>
 		</property>
 	</bean>
@@ -80,31 +81,46 @@
 		</property>
 	</bean>
 	<bean id="sysUserAction"  class="com.action.SysUserAction">
-	<property name="sysUserService">
+		<property name="sysUserService">
 			<ref bean="sysUserService" />
 		</property>
 	</bean>
-	
+	<bean id="dictionaryAction"  class="com.action.DictionaryAction">
+	</bean>
 	<!-- Action end -->
 	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
 		<property name="sysUserDao">
 			<ref bean="sysUserDao" />
 		</property>
 	</bean>
+	
 	<bean id="newsService" class="com.service.impl.NewsServiceImpl">
 		<property name="newsDao">
 			<ref bean="newsDao" />
 		</property>
 	</bean>
+	
+	<bean id="dictionaryService" class="com.service.impl.DictionaryServiceImpl">
+		<property name="dictionaryDao">
+			<ref bean="dictionaryDao" />
+		</property>
+	</bean>
 		
+	<!-- Service end -->
 	
 	<bean id="sysUserDao" class="com.dao.impl.SysUserDaoImpl">
-	<property name="sessionFactory">
+		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	
 	<bean id="newsDao" class="com.dao.impl.NewsDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="dictionaryDao" class="com.dao.impl.DictionaryDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

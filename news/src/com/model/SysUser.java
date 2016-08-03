@@ -3,7 +3,9 @@ package com.model;
 
 
 /**
- * Sysuser entity. @author MyEclipse Persistence Tools
+ * 
+ * @decription：系统用户
+ * @author MyEclipse Persistence Tools
  */
 
 public class SysUser  implements java.io.Serializable {

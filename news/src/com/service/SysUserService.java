@@ -2,8 +2,11 @@ package com.service;
 import java.util.List;
 
 import com.model.SysUser;
-
-
+/**
+ * @decription：新闻管理用户模块Service接口
+ * @author zhuangjf
+ *
+ */
 public interface SysUserService 
 {
 	public SysUser login(String yhzh, String password);

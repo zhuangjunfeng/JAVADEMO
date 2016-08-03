@@ -1,5 +1,7 @@
 package com.action;
-
+/**
+ * 新闻管理用户模块Action类
+ */
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,9 +12,6 @@ import com.service.SysUserService;
 import com.util.BaseAction;
 
 public class SysUserAction extends BaseAction {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	public  SysUser sysUser;
 	public String usersName;
@@ -37,20 +36,37 @@ public class SysUserAction extends BaseAction {
 		if (!yhzh.equals("") && !password.equals(""))
 		{
 			SysUser UserRs = sysUserService.login(yhzh,password);
-			if (!UserRs.equals("")) {
+			if (UserRs!=null) {
 				msg = "success";
 				session.setAttribute("User", UserRs);
+				return SUCCESS;	
 			} else {
-				msg = "error";
+				msg = "用户名密码错误";
+				return ERROR;
 			}			
 		}
 		else {
-			msg = "error";
+			msg = "用户名密码不能为空";
 			return ERROR;
 		}
-		return SUCCESS;			
+			
 	}
-	
+	/**
+	 * 
+	 * @decription：用户登出
+	 * @date 2016-8-2下午8:13:05
+	 * @author：zhuangjf
+	 */
+	public String logout(){
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		try {
+			session.setAttribute("User", null);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
+	}
 	/**
 	 * 
 	 * @decription：增加用户
@@ -114,7 +130,12 @@ public class SysUserAction extends BaseAction {
 			return ERROR;
 		}
 	}
-
+	/**
+	 *
+	 * @decription：更新用户信息
+	 * @date 2016-8-3下午11:25:06
+	 * @author：zhuangjf
+	 */
 	public String updateSysUser() 
 	{
 		HttpServletRequest req = getRequest();
@@ -160,7 +181,12 @@ public class SysUserAction extends BaseAction {
 		userList = sysUserService.querySysUsers();
 		return SUCCESS;
 	}
-	
+	/**
+	 *
+	 * @decription：单条查询用户信息
+	 * @date 2016-8-3下午11:25:29
+	 * @author：zhuangjf
+	 */
 	@SuppressWarnings("unused")
 	public String querySingleSysUser(){
 		HttpServletRequest req=getRequest();

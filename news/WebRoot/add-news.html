@@ -13,7 +13,7 @@
                 <div class="col-md-12">
                     <h2 class="page-header">
                         新闻管理后台
-                        <button class=" btn btn-default"><a href="login.html">退出</a></button>
+                        <a class=" btn btn-default back" id="logout">退出</a>
                         <small>
                             欢迎您, <i id="login-user">123</i>
                         </small>
@@ -55,18 +55,14 @@
                             <h3>
                                 <label  >类型:</label>
                             </h3></li>
-                           <li> <select class="form-control" id="newsType">
-                                <option>热点新闻</option>
-                                <option>财经新闻</option>
-                                <option>娱乐新闻</option>
-                                <option>体育新闻</option>
+                           <li> <select class="form-control" id="show_newsType">                           
                             </select>
                         </li>
                         <li>
                             <h3>
                                 <label>时间:</label>
                             </h3></li>
-                            <li><input type="text" class="form-control" id="editorTime"></li><br>
+                            <li><input type="text" class="form-control" id="editorTime"></li>
                         <li>
                             <h3>
                                 <label>内容:</label>
@@ -109,7 +105,6 @@
     </div>
     <script src="js/common/jquery-1.12.3.min.js"></script>
     <script src="js/common/bootstrap.js"></script>
-    <script src="js/modules/index.js"></script>
     <script src="js/modules/add-news.js"></script>
 </body>
 </html>

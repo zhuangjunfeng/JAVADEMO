@@ -1,7 +1,7 @@
 package com.model;
 
-/**
- * News entity. @author MyEclipse Persistence Tools
+/** @decription:新闻
+ *  @author MyEclipse Persistence Tools
  */
 
 public class News implements java.io.Serializable {

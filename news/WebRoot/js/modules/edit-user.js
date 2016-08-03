@@ -1,7 +1,11 @@
 $(function(){
-	
+	/**页面加载时查询全部用户**/
 	queryUser();
-	/**增加用户**/
+	/**
+	 * @decription：调用增加用户
+	 * @author：zhuangjf
+	 * @param：#add-user模态窗中保存按钮
+	 */
 	$(function(){
 		 $("#add-user").click(function(){		    
 			 var params ="yhxm="+$("#yhxm").val() 
@@ -9,19 +13,34 @@ $(function(){
          	+ "&yhyx="+ $("#yhyx").val() 
          	+ "&password=" + $("#password").val()
          	+"&yhzh="+$("#yhzh").val();
-		        		
-		        $.ajax({
-		            url:"system/addSysUser.shtml",
-		            type:"POST",
-		            data:params,
-		            success:function(){
-		            	window.location.href="user.html";
-		            }
+		 $.ajax({
+		     url:"system/addSysUser.shtml",
+		     type:"POST",
+		     data:params,
+		     error:function(XMLHttpRequest, textStatus, errorThrown){
+		     if(XMLHttpRequest.responseText=="loginError"){
+		    	 window.location.href="login.html";
+		      	}
+		     },
+		     success:function(){
+		    	 window.location.href="user.html";
+		     }
 		        });
 		    });
 	});
+	/**
+	 * @decription:调用登出方法
+	 */
+	 $("#logout").click(function(){
+		 $.ajax({
+			 url:"system/logout.shtml",
+	            type:"POST",	           
+	            success:function(){
+	            	window.location.href="login.html";
+	            	}
+		 });
+	 });
 })
-
 /*****************独立方法*********************/
 /**查询全部用户**/
 function queryUser(){
@@ -29,6 +48,11 @@ function queryUser(){
         type:"POST",
         url:"system/querySysUser.shtml",
         dataType:"json",
+        error:function(XMLHttpRequest, textStatus, errorThrown){
+        	if(XMLHttpRequest.responseText=="loginError"){
+        		window.location.href="login.html";
+        	}
+        },
         success:function(data){
             var userList=data.userList;           
             var userListHtml="<tr><th><input id='checked-all' type='checkbox'><label>全选</label></th><th>账&nbsp;&nbsp;号</th><th>姓&nbsp;&nbsp;名</th><th>性&nbsp;&nbsp;别</th><th>邮&nbsp;&nbsp;箱</th><th>密&nbsp;&nbsp;码</th><th>操&nbsp;&nbsp;作</th></tr>";
@@ -104,25 +128,43 @@ function queryUser(){
         }
     });
 }
-/**更新用户信息**/
-function updateUser(yhId,yhxm,yhxb,yhyx,yhzh,password){
-    var params ="yhxm="+yhxm 
+/**
+ * @decription：更新用户
+ * @author zhuangjf
+ * @param yhId 用户id
+ * @param yhxm 用户姓名	
+ * @param yhxb 用户性别
+ * @param yhyx 用户邮箱
+ * @param yhzh 用户账户
+ * @param password 用户密码
+ */
+	function updateUser(yhId,yhxm,yhxb,yhyx,yhzh,password){
+		var params ="yhxm="+yhxm 
             	+ "&yhxb="+yhxb 
             	+ "&yhyx="+yhyx
             	+ "&password=" +password
             	+"&yhzh="+yhzh
             	+"&yhId="+yhId;
-    $.ajax({
-        type : "POST",
-        dataType : "json",
-        url : 'system/updateSysUser.shtml',
-        data : params,
-        success : function(data) {
-        	queryUser();
-        }
-    });     
+		$.ajax({
+			type : "POST",
+			dataType : "json",
+			url : 'system/updateSysUser.shtml',
+			data : params,
+			error:function(XMLHttpRequest, textStatus, errorThrown){
+				if(XMLHttpRequest.responseText=="loginError"){
+					window.location.href="login.html";
+				}
+			},
+			success : function(data) {
+				queryUser();
+			}
+		});     
 }
-/*删除用户*/
+/**
+ * @decription:删除用户
+ * @author zhuangjf
+ * @param yhId 用户id
+ */
 function delUser(yhId){
     var param="yhId="+yhId;
     $.ajax({
@@ -130,6 +172,11 @@ function delUser(yhId){
         dataType:"json",
         url:"system/delSysUser.shtml",
         data:param,
+        error:function(XMLHttpRequest, textStatus, errorThrown){
+        	if(XMLHttpRequest.responseText=="loginError"){
+        		window.location.href="login.html";
+        	}
+        },
         success:function(){
         	queryUser();
         }

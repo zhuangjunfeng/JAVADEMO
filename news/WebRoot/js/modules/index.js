@@ -1,4 +1,3 @@
-
 $(function(){
 	/**checkbox全选**/
 	$("#checked-all").click(function(){
@@ -16,19 +15,39 @@ $(function(){
         			});
         	}
     });
-	
-    /**查询全部新闻**/
+	/**
+	 * @decription:调用登出方法
+	 * @author：zhuangjf
+	 */
+	 $("#logout").click(function(){
+		 $.ajax({
+			 url:"system/logout.shtml",
+	            type:"POST",	        
+	            success:function(){
+	            	window.location.href="login.html";
+	            	}
+		 });
+	 });
+	  /**查询全部新闻**/
     query();
    
 });
 
 /*****************独立方法*********************/
-/**查询全部新闻**/
+/**
+ * @decription:查询全部新闻
+ * @author：zhuangjf
+ */
 function query(){
     $.ajax({
         type:"POST",
         url:"system/queryNews.shtml",
         dataType:"json",
+        error:function(XMLHttpRequest, textStatus, errorThrown){
+        	if(XMLHttpRequest.responseText=="loginError"){
+        		window.location.href="login.html";
+        	}
+        },
         success:function(data){
             var newsList=data.newsList;           
             var newsListHtml="<tr><th><input id='checked-all' type='checkbox'><label>全选</label></th><th>标&nbsp;&nbsp;题</th><th>作&nbsp;&nbsp;者</th><th>类&nbsp;&nbsp;型</th><th>时&nbsp;&nbsp;间</th><th>操&nbsp;&nbsp;作</th></tr>";
@@ -51,18 +70,27 @@ function query(){
         }
     });
 }
-/*删除新闻*/
-function delNews(newsId){
-    var param="newsId="+newsId;
-    $.ajax({
-        type:"POST",
-        dataType:"json",
-        url:"system/delNews.shtml",
-        data:param,
-        success:function(){
-            query();
-        }
-    });
+/**
+ *@decription:删除新闻方法
+ *@addon：zhuangjf
+ * @param newsId
+ */
+	function delNews(newsId){
+		var param="newsId="+newsId;
+		$.ajax({
+			type:"POST",
+			dataType:"json",
+			url:"system/delNews.shtml",
+			data:param,
+			error:function(XMLHttpRequest, textStatus, errorThrown){
+				if(XMLHttpRequest.responseText=="loginError"){
+					window.location.href="login.html";
+				}
+			},
+			success:function(){
+				query();
+			}
+		});
 }
 
 
