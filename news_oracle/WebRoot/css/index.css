@@ -1,0 +1,276 @@
+/*reset*/
+body, html ,label,dl,dt{
+    margin: 0;
+    padding: 0;
+}
+.row{
+    padding: 0;
+}
+[class*="col-"]{
+}
+ul{
+    list-style:none;
+    margin: 0;
+    padding:0;
+}
+/*链接和字体*/
+a,a:hover,a:visited,a:active{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*登陆*/
+.login {
+    padding-top: 18%;
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+}
+.login h1,.login form {
+    text-align: center;
+}
+.login h1{
+    padding-bottom: 50px;
+    font-weight: bold;
+    font-size: 40px;
+    color: #666;
+}
+.login button{
+    width: 100%;
+    padding: 5px;
+    font-size: 28px;
+    font-weight: 700;
+
+    background-color:rgba(22, 155, 213, 1) ;
+}
+.login .input-wrap{
+    position: relative;
+}
+.input-wrap input{
+    width: 100%;
+    padding: 15px 0 15px 40px;
+    margin-bottom: 30px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login .input-wrap span{
+    position: absolute;
+    left: 8px;
+    top: 13px;
+    font-size: 26px;
+}
+
+/*用户管理页面*/
+header{
+    width: 100%;
+    background-color: #666;
+}
+header h1{
+    color: #fff;
+    font-size: 28px;
+    line-height: 2em;
+}
+header h1 .btn{
+    color: #fff;
+    padding: 6px 18px;
+    background-color: #ccc;
+}
+header h1 .btn:hover{
+    background-color: #fff;
+    color: #5bc0de;
+}
+header h1 button{
+
+    margin: 9px 0 0 20px;
+}
+header h1 button,header h1 span{
+    float: right;
+    font-size: 16px;
+}
+header h1 span i{
+    font-style: normal;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*content*/
+
+.content [class*="col-md-2"]{
+    padding: 0;
+}
+.sidebar{
+    background-color:#e4e4e4;
+    text-align: center;
+    color:#fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+.sidebar a{
+    display: block;
+    margin: 0;
+    color: #fff;
+    padding: 18px 0;
+    border-top:1px solid #fff;
+    background-color: #ccc;
+    text-decoration: none;
+}
+
+.sidebar a:hover{
+    background-color: #999;
+}
+.sidebar a[class*="select"]{
+    background-color: #999;
+}
+
+/*detail-wrap*/
+.detail-wrap{
+    color:#666;
+    background-color: #f2f2f2;
+}
+.detail-wrap h1{
+    margin: 0;
+    padding:15px 0 15px 20px;
+    font-size:16px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+    line-height: 2em;
+    text-align: left;
+}
+.detail-wrap h1 button{
+    float: right;
+    padding: 6px 17px;
+    font-weight: bold;
+}
+.detail-wrap h1 button:hover{
+    color: rgba(22, 155, 213, 1);
+    background-color: #fff;
+    border-color:  rgba(22, 155, 213, 1);
+}
+.detail-wrap form{
+    padding: 20px 0 20px 20px;
+
+}
+.detail-wrap form label{
+    font-size: 17px;
+    font-weight: 100;
+}
+.detail-wrap form input{
+    width: 126px;
+    height: 30px;
+    margin: 0 10px 0 5px;
+}
+.detail-wrap form select{
+    width: 75px;
+    height: 30px;
+    margin-left: 10px;
+}
+.detail-wrap form button{
+    float: none;
+    font-weight: 100;
+    margin-left:16px;
+    padding: 4px 12px;
+}
+
+/*表格****************************/
+.user-account input,
+.user-name input,.user-sex input,
+.user-password input
+{
+    max-width: 120px;
+    max-height: 30px;
+}
+.user-mail input{
+    max-width: 140px;
+    max-height: 30px;
+}
+
+.user-edit{
+    font-size: 26px;
+    line-height: 0;
+}
+.table th,.table td{
+    text-align: center;
+}
+.table thead{
+    margin-bottom: 3px;
+    background-color: #fff;
+}
+.table>thead>tr>th{
+    border-bottom: 0;
+    line-height: 2.4em;
+}
+.table>tbody>tr{
+    background-color: #fff;
+}
+.table>tbody>tr>td{
+    border-top:3px solid #f2f2f2;
+    line-height: 2.4em;
+}
+.table>tbody>tr>td:nth-of-type(1){
+    text-align: left;
+}
+.table>tbody>tr>td input[type=checkbox]{
+    margin-left:25%;
+}
+.table>tbody>tr>td input[type=text]{
+    display: none;
+    text-align: center;
+}
+.page-change{
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid;
+    border-color:#ddd;
+    padding: 6px 8px;
+}
+.previous-page{
+    margin-left: 680px;
+}
+
+.page-change:hover{
+     border-color:blue;
+      color: blue;
+
+}
+.page-number{
+    width: 60px;
+    height: 30px;
+    margin-bottom: 40px;
+}
+.page-go{
+    position: absolute;
+    padding: 4px 8px;
+    right: 90px;
+}
+/*操作栏特殊样式*/
+.table>tbody>tr .user-edit{
+    line-height: 0;
+}
+.table>tbody>tr .user-edit span{
+    cursor: pointer;
+}
+.table>tbody>tr .user-edit span:hover{
+    opacity: 0.75;
+}
+.table>tbody>tr .user-edit span[class*="glyphicon-ok"]{
+    display: none;
+}
+/*Modal*/
+.modal-title{
+    margin-left: 230px;
+    font-size: 18px;
+    color: #555;
+}
+#add-userModal .modal-dialog .modal-content .modal-body ul{
+    margin-left: 104px;
+    font-size: 16px;
+    color: #000;
+}
+#add-userModal .modal-dialog .modal-content .modal-body ul li{
+    padding: 10px;
+}

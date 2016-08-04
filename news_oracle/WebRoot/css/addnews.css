@@ -1,0 +1,23 @@
+.row ul{
+	margin-left: 210px;
+}
+.row ul li{
+	font-size: 18px;
+	padding: 8px 0;
+}
+.row ul li .title{
+	width: 353px;
+}
+.content>input{
+	border-radius: 3px;
+	border:1px solid;
+	border-color: rgba(22, 155, 213, 1);
+	background-color: rgba(22, 155, 213, 1);
+	color: #fff;
+	padding: 5px 15px;
+	margin-right: 15px;
+	margin-top: 20px;
+}
+.save{
+	margin-left: 300px;
+}

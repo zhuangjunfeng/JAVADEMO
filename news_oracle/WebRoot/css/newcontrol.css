@@ -1,0 +1,69 @@
+a,a:visited,a:active{
+    text-decoration: none;
+    color: #555;
+}
+a:hover{
+     text-decoration: none;
+    opacity: 0.75;
+}
+/*detail-wrap*/
+.detail-wrap{
+    position: relative;
+}
+.detail-wrap h1 a{
+    float: right;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgba(22, 155, 213, 1);
+    padding: 0 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(22, 155, 213, 1);
+}
+.detail-wrap h1 a:hover{
+    background-color: #fff;
+    border-color: rgba(22, 155, 213, 1);
+    color: rgba(22, 155, 213, 1);
+}
+.detail-wrap form{
+    padding: 20px 0 20px 20px;
+
+}
+.detail-wrap form label{
+    font-size: 17px;
+    font-weight: 100;
+}
+.detail-wrap form input{
+    width: 80px;
+    height: 30px;
+    margin: 0 10px 0 5px;
+}
+.detail-wrap form .search-input{
+     width: 158px;
+    height: 28px;
+    border-radius: 5px;
+    border:1px solid;
+    border-color: rgba(228, 228, 228, 1);
+    margin: 0 10px 0 5px;
+}
+.detail-wrap form .search-icon{
+    position: absolute;
+    left:160px ;
+    top: 85px;   
+    padding: 2px 4px;
+    border-radius: 5px;
+    background-image: url('../images/search_icon.png');
+}
+/*表格****************************/
+.table>thead>tr>th{  
+    font-size: 18px;    
+}
+.table>tbody>tr>td input[type=checkbox]{
+     margin-right:25%;
+}
+
+
+/*操作栏特殊样式*/
+.cannt-edit{
+    opacity: 0.2;
+}

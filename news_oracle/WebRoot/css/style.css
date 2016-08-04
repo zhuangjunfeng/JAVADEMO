@@ -1,0 +1,165 @@
+/*reset*/
+a:hover{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+.input-group{
+    margin-top: 20px;
+}
+.search{
+    background-color: #06f;
+    color: #fff;
+    border-color: #06f;
+}
+.glyphicon-ok,.glyphicon-remove,.glyphicon-share,.glyphicon-edit{
+    cursor: pointer;   
+}
+.glyphicon-ok{
+    display: none;
+}
+.sizing-addon2{
+    padding: 0 16px;
+}
+/*header*/
+header{
+       background-color: #000;
+}
+.container{
+    width: 100%;
+    padding-left: 0;
+
+}
+.page-header{
+    padding: 20px;
+    color: #fff;
+    margin: 0;
+}
+.col-md-12 h2 small,button,.back{
+    float: right;
+    margin-left: 30px;
+}
+.col-md-12 h2 small{
+    font-size: 16px;
+     color: #fff;
+    margin-top: 15px;
+}
+.news-detail-header{
+    background-color: #fff;
+    text-align: center;
+}
+.news-detail-header .container span{
+    padding:20px 30px;
+}
+/*content*/
+.col-md-2{
+    overflow-x: hidden;
+    padding-right: 0;
+}
+.col-md-10{
+    border-left: 1px solid;
+    border-color: #ddd;
+}
+.col-md-10 h1{
+    border-bottom: 1px solid;
+    border-color: #ddd;
+}
+.col-md-10 ul li{
+    display: inline-block;
+}
+.nav{  
+    width: 100%; 
+    text-align: center;
+    border-radius: 0;
+    background-color: #ddd;
+}
+.nav li a{
+    border-radius: 0;
+}
+.save{
+	margin-left: 220px;
+}
+.control{
+	float: left;
+	margin-top: 10px;
+}
+
+.page-switch{
+	position: absolute;
+	right: 230px;
+	bottom: 20px
+}
+.col-xs-5{
+    padding-top: 20px;
+
+}
+.news-content{
+    width: 1000px;
+    margin:0 auto;
+    font-size: 14px;
+    border: 1px solid;
+    border-color: #ddd;
+    border-bottom: none;
+}
+
+.table-responsive{
+    margin-top: 60px;
+}
+.table-responsive h4{
+    margin-left: 10px;
+    padding-top: 30px;
+    border-bottom: 1px solid;
+     border-top: 1px solid;
+    border-color: #ddd;
+}
+.user-account input,
+.user-name input,.user-sex input,
+.user-password input
+{
+    max-width: 120px;
+    max-height: 30px;
+}
+.user-mail input{
+    max-width: 140px;
+    max-height: 30px;
+}
+.user-edit{
+    font-size: 26px;
+    line-height: 0;
+}
+.table th,.table td{
+    text-align: center;
+}
+.table thead{
+    margin-bottom: 3px;
+    background-color: #fff;
+}
+.table>thead>tr>th{
+    border-bottom: 0;
+    line-height: 1em;
+}
+.table>tbody>tr{
+    background-color: #fff;
+}
+.table>tbody>tr>td{
+    border-top:3px solid #f2f2f2;
+    line-height: 1em;
+}
+.table>tbody>tr>td:nth-of-type(1){
+    text-align: left;
+}
+.table>tbody>tr>td input[type=checkbox]{
+    margin-left:25%;
+}
+.table>tbody>tr>td input[type=text]{
+    display: none;
+    text-align: center;
+}
+
+#myEditor{
+    width:915px;
+    min-height:400px;
+    
+}
+
