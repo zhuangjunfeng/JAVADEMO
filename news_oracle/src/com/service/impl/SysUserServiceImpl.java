@@ -9,8 +9,9 @@ import com.service.SysUserService;
 /**
  * @decription：新闻管理用户模块Service实现类
  * @author zhuangjf
- *
  */
+
+@SuppressWarnings("rawtypes")
 public class SysUserServiceImpl implements SysUserService
 {
 	private SysUserDao sysUserDao;

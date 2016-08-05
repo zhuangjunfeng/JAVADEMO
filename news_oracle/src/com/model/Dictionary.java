@@ -8,13 +8,16 @@ package com.model;
 
 public class Dictionary implements java.io.Serializable {
 
-	// Fields
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -985974663105746173L;
 	private Integer dictId;
 	private String dictName;
 	private String dictValue;
 	private String dictType;
 	private Integer isFixed;
+	
 	public Integer getDictId() {
 		return dictId;
 	}
@@ -45,7 +48,4 @@ public class Dictionary implements java.io.Serializable {
 	public void setIsFixed(Integer isFixed) {
 		this.isFixed = isFixed;
 	}
-
-	
-
 }

@@ -27,5 +27,11 @@
         <property name="editorTime" type="java.lang.String">
             <column name="EditorTime" />
         </property>
+         <property name="createTime" type="java.lang.String" update="false">
+            <column name="CreateTime" />
+        </property>
+         <property name="updateTime" type="java.lang.String">
+            <column name="updateTime" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -7,6 +7,7 @@ import com.model.SysUser;
  * @author zhuangjf
  *
  */
+@SuppressWarnings("rawtypes")
 public interface SysUserDao 
 {
 	/**

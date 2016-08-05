@@ -1,8 +1,4 @@
-/**
- * Copyright:Copyright(c)2013-2014
- * Company:厦门市智联信通物联网科技有限公司
- * @version 1.0
- */
+
 package com.util;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,11 +8,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.ActionSupport;
-/**
- * @description: Action基础类
- * @date: 2012-11-14 下午02:44:07
- * @author: Lintz
- */
+
 @SuppressWarnings("serial")
 public class BaseAction extends ActionSupport implements ServletResponseAware,ServletRequestAware{
 		private HttpServletRequest request;

@@ -1,12 +1,5 @@
 $(function(){
 	/**
-	 * @decription：调用更新新闻方法
-	 * @param：#update-news edit-news页面保存按钮
-	 */
-	$("#update-news").click(function(){
-        updateNews();
-    	});
-	/**
 	 * @decription:登出方法
 	 * @param：#logout 退出按钮
 	 */
@@ -34,11 +27,16 @@ $(function(){
 				 typeHtml+="<option>"+n.dictName+"</option>";           
 			 });
 			 $("#e_newsType").html(typeHtml);
-			  querySingleNews();
 		}
 	});
- 
- 
+	/**
+	 * @decription：调用更新新闻方法
+	 * @param：#update-news edit-news页面保存按钮
+	 */
+	$("#update-news").click(function(){
+        updateNews();
+    	});
+	  querySingleNews();
 });
 /*****************独立方法*********************/
 /**

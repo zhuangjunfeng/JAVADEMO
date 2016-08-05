@@ -2,14 +2,14 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>news_orc</display-name>
   <!-- 用户过滤器-->
-	<filter>
+	<!-- <filter>
 		<filter-name>authFilter</filter-name>
 		<filter-class>com.util.AuthFilter</filter-class>		
 	</filter>	
 	<filter-mapping>
 		<filter-name>authFilter</filter-name>
 		<url-pattern>*.shtml</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 	
   <filter>
     <filter-name>struts2</filter-name>

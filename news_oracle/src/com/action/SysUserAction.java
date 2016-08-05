@@ -1,6 +1,6 @@
 package com.action;
 /**
- * 新闻管理用户模块Action类
+ * 用户模块Action类
  */
 import java.util.List;
 
@@ -11,6 +11,7 @@ import com.model.SysUser;
 import com.service.SysUserService;
 import com.util.BaseAction;
 
+@SuppressWarnings({"rawtypes","unchecked"})	
 public class SysUserAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
 	public  SysUser sysUser;
@@ -18,6 +19,7 @@ public class SysUserAction extends BaseAction {
 	public String password;
 	public String msg;
 	public SysUserService sysUserService;
+
 	public List userList;
 	public List singleUserList;
 	
@@ -73,6 +75,7 @@ public class SysUserAction extends BaseAction {
 	 * @date 2016-7-29上午11:03:46
 	 * @author：zhuangjf
 	 */
+
 	public String addSysUser(){
 		HttpServletRequest req = getRequest();
 		String yhxm = req.getParameter("yhxm");
@@ -197,12 +200,6 @@ public class SysUserAction extends BaseAction {
 
 	}
 	
-	
-	
-	
-	
-	
-	
 	//-----------------set and get-----------------------
 	
 	public SysUser getSysUser() {
@@ -245,21 +242,19 @@ public class SysUserAction extends BaseAction {
 		this.sysUserService = sysUserService;
 	}
 
-	@SuppressWarnings("rawtypes")
 	public List getUserList() {
 		return userList;
 	}
 
-	public void setUserList(@SuppressWarnings("rawtypes") List userList) {
+	public void setUserList(List userList) {
 		this.userList = userList;
 	}
 
-	@SuppressWarnings("rawtypes")
 	public List getSingleUserList() {
 		return singleUserList;
 	}
 
-	public void setSingleUserList(@SuppressWarnings("rawtypes") List singleUserList) {
+	public void setSingleUserList(List singleUserList) {
 		this.singleUserList = singleUserList;
 	}
 	

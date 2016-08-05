@@ -13,7 +13,7 @@ import com.dao.SysUserDao;
 
 import com.model.SysUser;
 
-
+@SuppressWarnings({"rawtypes","unchecked"})
 public class SysUserDaoImpl implements SysUserDao
 {
 	private SessionFactory sessionFactory;
@@ -22,7 +22,6 @@ public class SysUserDaoImpl implements SysUserDao
 	 * @author：zhuangjf
 	 * @param：yhzh 用户账户
 	 */
-	@SuppressWarnings("unchecked")
 	public 	SysUser query(String yhzh)
 	{	
 		
@@ -75,7 +74,6 @@ public class SysUserDaoImpl implements SysUserDao
 	 * @decription：查询全部用户
 	 * @author：zhuangjf
 	 */
-	@SuppressWarnings("unchecked")
 	public List<SysUser> querySysUsers(){
 		Query query = this.getSession().createQuery("from SysUser");
 		List<SysUser> list = query.list();
@@ -89,11 +87,10 @@ public class SysUserDaoImpl implements SysUserDao
 	public List querySingleSysUser(int yh_id){
 		Query query = this.getSession().createQuery("from SysUser where YhId=?");
 		query.setLong(0, yh_id);
+	
 		List<SysUser> user_list=query.list();
 		return user_list;
 	}	
-	
-		
 	
 	//---------------------get And set-----------------------
 	public Session getSession() {

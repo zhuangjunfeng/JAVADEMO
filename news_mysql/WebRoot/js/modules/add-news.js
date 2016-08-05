@@ -13,7 +13,7 @@ $(function(){
 			 $.each(typeList,function(i,n){
 				 typeHtml+="<option>"+n.dictName+"</option>";           
 			 });
-			 $("#show_newsType").html(typeHtml);
+			 $("#newsType").html(typeHtml);
 		}
 	});
 	/**

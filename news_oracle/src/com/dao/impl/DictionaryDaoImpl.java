@@ -5,13 +5,12 @@ package com.dao.impl;
  * 
  */
 import java.util.List;
-
 import org.hibernate.Query;
-
 import com.dao.DictionaryDao;
 import com.model.Dictionary;
 import com.util.BasicHibernateDao;
 
+@SuppressWarnings("unchecked")
 public class DictionaryDaoImpl extends BasicHibernateDao implements DictionaryDao {
 	/**
 	 * @decription:增加字典数据

@@ -22,9 +22,9 @@
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl"></property>
-		<property name="username" value="yzd_zjf"></property>
-		<property name="password" value="123456"></property>
+		<property name="url" value="jdbc:oracle:thin:@192.168.1.107:1521:orcl"></property>
+		<property name="username" value="yzd_lintz"></property>
+		<property name="password" value="sems2016"></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">

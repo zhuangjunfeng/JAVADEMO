@@ -1,6 +1,6 @@
 package com.action;
 /**
- * 新闻管理新闻模块Action类
+ * 新闻模块Action类
  */
 import java.util.ArrayList;
 import java.util.List;
