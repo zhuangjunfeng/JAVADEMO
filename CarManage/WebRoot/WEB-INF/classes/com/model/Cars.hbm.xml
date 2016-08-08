@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.model.Cars" table="CARS" >
+        <id name="clid" type="java.lang.String">
+            <column name="CLID" length="20" />
+             <generator class="sequence">
+			    <param name="sequence">CAR_ID_SEQ</param>    
+			  </generator>
+        </id>
+        <property name="cph0" type="java.lang.String">
+            <column name="CPH0" length="20" />
+        </property>
+        <property name="cllx" type="java.lang.String">
+            <column name="CLLX" length="20" />
+        </property>
+        <property name="zws0" type="java.lang.Integer">
+            <column name="ZWS0" precision="5" scale="0" />
+        </property>
+        <property name="clgs" type="java.lang.String">
+            <column name="CLGS" length="20" />
+        </property>
+        <property name="xsgl" type="java.lang.Long">
+            <column name="XSGL" precision="10" scale="0" />
+        </property>
+        <property name="clzt" type="java.lang.String">
+            <column name="CLZT" length="20" />
+        </property>
+        <property name="cccs" type="java.lang.Integer">
+            <column name="CCCS" precision="5" scale="0" />
+        </property>
+        <property name="ccrw" type="java.lang.String">
+            <column name="CCRW" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

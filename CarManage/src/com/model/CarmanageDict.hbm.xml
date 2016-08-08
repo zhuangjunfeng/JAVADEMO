@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.model.CarmanageDict" table="CARMANAGEDICT">
+        <id name="dictid" type="java.lang.Long">
+            <column name="DICTID" precision="10" scale="0" />
+             <generator class="sequence">
+			    <param name="sequence">DICT_ID_SEQ</param>    
+			  </generator>
+        </id>
+        <property name="dicttype" type="java.lang.String">
+            <column name="DICTTYPE" length="20" not-null="true" />
+        </property>
+        <property name="dictvalue" type="java.math.BigDecimal">
+            <column name="DICTVALUE" precision="20" scale="0" not-null="true" />
+        </property>
+        <property name="dictname" type="java.lang.String">
+            <column name="DICTNAME" length="20" not-null="true" />
+        </property>
+        <property name="isfixed" type="java.lang.Long">
+            <column name="ISFIXED" precision="10" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

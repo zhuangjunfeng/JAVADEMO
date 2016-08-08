@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.model.CarDetail" table="CARDETAIL" >
+        <id name="clxqid" type="java.lang.Integer">
+            <column name="CLXQID" precision="5" scale="0" />
+             <generator class="sequence">
+			    <param name="sequence">CARDETAIL_ID_SEQ</param>    
+			  </generator>
+        </id>
+        <property name="cph000" type="java.lang.String">
+            <column name="CPH000" length="20" not-null="true" />
+        </property>
+        <property name="cllx00" type="java.lang.String">
+            <column name="CLLX00" length="20" />
+        </property>
+        <property name="zws000" type="java.lang.Integer">
+            <column name="ZWS000" precision="5" scale="0" />
+        </property>
+        <property name="clgs00" type="java.lang.String">
+            <column name="CLGS00" length="20" />
+        </property>
+        <property name="xsgl00" type="java.lang.Long">
+            <column name="XSGL00" precision="10" scale="0" />
+        </property>
+        <property name="cjh000" type="java.lang.String">
+            <column name="CJH000" length="20" />
+        </property>
+        <property name="clpl00" type="java.lang.String">
+            <column name="CLPL00" length="20" />
+        </property>
+        <property name="cyrl00" type="java.lang.String">
+            <column name="CYRL00" length="10" />
+        </property>
+        <property name="clyh00" type="java.lang.Long">
+            <column name="CLYH00" precision="10" scale="0" />
+        </property>
+        <property name="gmsj00" type="java.lang.String">
+            <column name="GMSJ00" length="20" />
+        </property>
+        <property name="bdyg00" type="java.lang.String">
+            <column name="BDYG00" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

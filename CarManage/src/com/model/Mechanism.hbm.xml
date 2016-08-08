@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.model.Mechanism" table="MECHANISM" >
+        <id name="jgid" type="java.lang.Long">
+            <column name="JGID" precision="10" scale="0" />
+              <generator class="sequence">
+			    <param name="sequence">MECHANISM_ID_SEQ</param>    
+			  </generator>
+        </id>
+        <property name="jgmc" type="java.lang.String">
+            <column name="JGMC" length="20" />
+        </property>
+        <property name="jglx" type="java.lang.String">
+            <column name="JGLX" length="20" />
+        </property>
+        <property name="jgdz" type="java.lang.String">
+            <column name="JGDZ" length="20" />
+        </property>
+        <property name="qxdj" type="java.lang.String">
+            <column name="QXDJ" length="20" />
+        </property>
+        <property name="jggs" type="java.lang.String">
+            <column name="JGGS" length="20" />
+        </property>
+        <property name="ygrs" type="java.lang.Integer">
+            <column name="YGRS" precision="5" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

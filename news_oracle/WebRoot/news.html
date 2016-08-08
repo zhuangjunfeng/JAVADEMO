@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class=" col-md-2">
-                    <ul class="nav nav-pills nav-stacked">
+                    <ul class="nav ">
                         <li>
                             <a  href="user.html">用户管理</a>
                         </li>
@@ -39,18 +39,18 @@
                         新闻管理
                         <a class="btn btn-primary back"  id="sizing-addon3" href="add-news.html">新增</a>
                     </h1>
-                    <form action="">
-                        <div class="col-lg-6">
+                    <form class="mt20" action="">
+                        <div class="col-md-3">
                             <div class="input-group input-group-lg3">
                                 <a class="input-group-addon search" href="javascript:;">搜索</a>
-                                <input class="form-control" type="text"  placeholder="请输入关键词" sizing-addon2"></div>
+                                <input class="form-control" type="text"  placeholder="请输入关键词" ></div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-md-2 pl0 pr15">
                             <div class="input-group input-group-lg3">
                                 <label class="input-group-addon" >作者:</label>
                                 <input class="form-control"  type="text" ></div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-md-3 pl0 ">
                             <div class="input-group input-group-lg3 ">
                                 <label class="input-group-addon">类型:</label>
                                 <select class="form-control">
@@ -63,46 +63,76 @@
                             </div>
                         </div>
 
-                        <div class="input-group input-group-lg3 col-xs-5">
+                        <div class="input-group input-group-lg3 col-md-3 pr15 mt0">
                             <label class="input-group-addon">时间:</label>
-                            <input class="form-control" type="text" name="time" id="time" placeholder="2016-5-10">
-                            <input class="form-control" type="text" name="time" id="time" placeholder="2016-7-20"></div>
+                            <input class="form-control" type="text" name="time" placeholder="2016-5-10">
+                            <input class="form-control" type="text" name="time" placeholder="2016-7-20">
+                        </div>
 
                         <div class="control">
-                            <a class="btn btn-default">删除</a>
                             <a class="btn btn-default" id="query">查询</a>
+                            <a class="btn btn-default">删除</a>
                         </div>
                     </form>
                     <div class="table-responsive">
                         <h4>新闻列表</h4>
-                        <table class="table table-hover table-striped" id="show_list" >                           
+                        <table class="table table-hover table-striped" id="show_list" >  
+                        <tr>
+                            <th>
+                            <input type="checkbox" id="checked-all">
+                            <label>全选</label>
+                            </th>
+                            <th>账&nbsp;&nbsp;号</th>
+                            <th>姓&nbsp;&nbsp;名</th>
+                            <th>性&nbsp;&nbsp;别</th>
+                            <th>邮&nbsp;&nbsp;箱</th>
+                            <th>密&nbsp;&nbsp;码</th>
+                            <th>操&nbsp;&nbsp;作</th>
+                        </tr>
+                        <tr>
+                            <td class="list-id">
+                            <input type="checkbox"> 
+                            <label>1</label>
+                            </td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td>数据</td>
+                            <td class="user-edit">
+                               <a class="glyphicon glyphicon-edit news-edit" href=" edit-news.html?newsId=23"></a>
+                                <a class="glyphicon glyphicon-eye-open" href="news-detail.html?newsId=23">
+                                </a>
+                            <a class="glyphicon glyphicon-remove del-news" data-id="23"data-toggle="modal" data-target="#delModal"></a>
+                            <a class="glyphicon glyphicon-share" ></a>
+                            </td>
+                      </tr>
+                                             
                         </table>
                         <ul class="pager">
                             <li>
                                 <a  href="javascript:;">上一页</a>
-                            </li>
-                            <li>
                                 <a  href="javascript:;">下一页</a>
+                                <div class="page-switch input-group">
+                                    <input class="form-control"  type="text" >
+                                    <a class="input-group-addon" href="javascript:;">go</a>
+                                    <label class="input-group-addon">共25页</label>
+                                </div>
                             </li>
                         </ul>
-                        <div class="page-switch input-group input-group-lg3 col-lg-2">
-                            <input class="form-control"  type="text" >
-                            <a class="input-group-addon" href="javascript:;">go</a>
-                            <label class="input-group-addon">共25页</label>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">提示</h4>
+                        <h4 class="modal-title" id="delModalLabel">提示</h4>
                     </div>
                     <div class="modal-body">
                         删除后将不可恢复，
