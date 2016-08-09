@@ -86,8 +86,7 @@ public class SysUserDaoImpl implements SysUserDao
 	 */
 	public List querySingleSysUser(int yh_id){
 		Query query = this.getSession().createQuery("from SysUser where YhId=?");
-		query.setLong(0, yh_id);
-	
+		query.setLong(0, yh_id);	
 		List<SysUser> user_list=query.list();
 		return user_list;
 	}	

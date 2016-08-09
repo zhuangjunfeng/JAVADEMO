@@ -19,7 +19,6 @@ public class SysUserAction extends BaseAction {
 	public String password;
 	public String msg;
 	public SysUserService sysUserService;
-
 	public List userList;
 	public List singleUserList;
 	
