@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>edit-news</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="page-header">
+                        新闻管理后台
+                       <a class=" btn btn-default back" id="logout">退出</a>
+                        <small>
+                            欢迎您, <i id="login-user">123</i>
+                        </small>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <a  href="user.html">用户管理</a>
+                        </li>
+                        <li class="active">
+                            <a  href="javascript:;">新闻管理</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" col-md-10">
+                    <h1>
+                        新闻编辑
+                        <a class="btn btn-primary back" href="news.html">返回</a>
+                    </h1>
+                    <ul>
+                        <li>
+                            <h3 class="input-group">
+                                <label class="input-group-addon">标题:</label>
+                                <input  type="text"  name="title" id="e_newsTitle" class="form-control">
+                            </h3>
+                        </li>
+
+                        <li>
+                            <h3 class="input-group">
+                                <label class="input-group-addon" >作者:</label>
+                                <input type="text" name="author" id="e_newsAuthor" class="form-control">
+                            </h3>
+                        </li>
+                        <li>
+                            <h3 class="input-group">
+                                <label class="input-group-addon" >类型:</label>
+                                <select class="form-control" id="e_newsType">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                </select>
+                            </h3>
+                        </li>
+                        <li>
+                            <h3 class="input-group">
+                                <label  class="input-group-addon" >时间:</label>
+                                <input type="text" class="form-control" id="e_editorTime">
+                            </h3>
+                        </li>
+                        <li>
+                            <h3>
+                                <label>内容:</label>
+                            </h3>
+                        </li>
+                    </ul>
+                    <div id="myEditor" ></div>
+                    <a href="javascript:;" class="btn btn-primary save" id="update-news" >保存</a>
+                    <input class="btn btn-primary" data-toggle="modal" data-target="#myModal" type="submit" value="发布">
+                    <input class="btn btn-primary" data-toggle="modal" data-target="#myModal" type="button" value="取消">
+                </div>             
+            </div>
+
+            <script type="text/javascript" src="js/common/ueditor/ueditor.config.js"></script>
+            <script type="text/javascript" src="js/common/ueditor/ueditor.all.js"></script>
+            <script type="text/javascript">
+        var editor = new UE.ui.Editor();
+        editor.render("myEditor");
+            </script>
+            <!-- <input class="btn btn-primary save" id="update-news" data-toggle="modal" data-target="#myModal" type="submit" value="保存"> -->
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">提示</h4>
+                        </div>
+                        <div class="modal-body">是否确认？</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/common/jquery-1.12.3.min.js"></script>
+    <script src="js/common/bootstrap.js"></script>
+    <script src="js/modules/edit-news.js"></script>
+</body>
+</html>

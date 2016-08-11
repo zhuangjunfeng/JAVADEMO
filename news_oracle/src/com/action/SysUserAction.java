@@ -11,7 +11,7 @@ import com.model.SysUser;
 import com.service.SysUserService;
 import com.util.BaseAction;
 
-@SuppressWarnings({"rawtypes","unchecked"})	
+@SuppressWarnings({"rawtypes","unchecked","unused"})		
 public class SysUserAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
 	public  SysUser sysUser;
@@ -178,7 +178,6 @@ public class SysUserAction extends BaseAction {
 	public String querySysUser()
 	{
 		HttpServletRequest req = getRequest();
-		@SuppressWarnings("unused")
 		HttpSession session = req.getSession();
 		userList = sysUserService.querySysUsers();
 		return SUCCESS;
@@ -189,7 +188,6 @@ public class SysUserAction extends BaseAction {
 	 * @date 2016-8-3下午11:25:29
 	 * @author：zhuangjf
 	 */
-	@SuppressWarnings("unused")
 	public String querySingleSysUser(){
 		HttpServletRequest req=getRequest();
 		HttpSession session = req.getSession();

@@ -4,8 +4,8 @@
 
 <hibernate-mapping>
     <class name="com.model.Mechanism" table="MECHANISM" >
-        <id name="jgid" type="java.lang.Long">
-            <column name="JGID" precision="10" scale="0" />
+        <id name="jgid" type="java.lang.Integer">
+            <column name="JGID" precision="8" scale="0" />
               <generator class="sequence">
 			    <param name="sequence">MECHANISM_ID_SEQ</param>    
 			  </generator>
@@ -22,8 +22,8 @@
         <property name="qxdj" type="java.lang.String">
             <column name="QXDJ" length="20" />
         </property>
-        <property name="jggs" type="java.lang.String">
-            <column name="JGGS" length="20" />
+        <property name="jgsd" type="java.lang.String">
+            <column name="JGSD" length="20" />
         </property>
         <property name="ygrs" type="java.lang.Integer">
             <column name="YGRS" precision="5" scale="0" />

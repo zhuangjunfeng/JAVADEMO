@@ -19,17 +19,17 @@
         <property name="yhyx" type="java.lang.String">
             <column name="YHYX" length="20" />
         </property>
-        <property name="password" type="java.lang.String">
-            <column name="PASSWORD" length="50" />
+        <property name="yhmm" type="java.lang.String">
+            <column name="YHMM" length="50" />
         </property>
-        <property name="yhqx" type="java.lang.String">
-            <column name="YHQX" length="20" />
+        <property name="yhjs" type="java.lang.String">
+            <column name="YHJS" length="20" />
         </property>
         <property name="yhzh" type="java.lang.String">
             <column name="YHZH" length="20" />
         </property>
-        <property name="phonenumber" type="java.math.BigDecimal">
-            <column name="PHONENUMBER" precision="20" scale="0" />
+        <property name="sjhm" type="java.lang.Integer">
+            <column name="SJHM" precision="20" scale="0" />
         </property>
         <property name="yhxb" type="java.lang.String">
             <column name="YHXB" length="20" />

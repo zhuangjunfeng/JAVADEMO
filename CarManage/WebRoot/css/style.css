@@ -1,0 +1,286 @@
+/*reset*/
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.input-group {
+    margin-top: 20px;
+}
+
+.pl0 {
+    padding-left: 0;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+form .mt0 {
+    margin-top: 0;
+}
+
+form .pr15 {
+    padding-right: 15px;
+}
+
+.search {
+    background-color: #06f;
+    color: #fff;
+    border-color: #06f;
+}
+
+.glyphicon-ok, .glyphicon-remove, .glyphicon-share, .glyphicon-edit {
+    cursor: pointer;
+}
+
+.glyphicon-ok {
+    display: none;
+}
+
+.sizing-addon2 {
+    padding: 0 16px;
+}
+
+.input-group[class*=col-] {
+    padding-left: 0;
+}
+
+/*header*/
+header {
+    background-color: #4A89DC;
+}
+
+header .row {
+    border-bottom: 2px solid #2e6da4;
+}
+
+.container {
+    width: 100%;
+    padding-left: 0;
+}
+
+.page-header {
+    font-weight: bold;
+    padding: 20px;
+    color: #fff;
+    margin: 0;
+    border: 0;
+}
+
+.page-header a {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.col-md-12 h2 small, button, .back {
+    float: right;
+    margin-left: 30px;
+}
+
+.col-md-12 h2 small {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.news-detail-header {
+    background-color: #fff;
+    text-align: center;
+}
+
+.news-detail-header .container span {
+    padding: 20px 30px;
+}
+
+/*content*/
+.col-md-2 {
+    padding-right: 0;
+}
+
+.col-md-10 {
+    border-left: 1px solid;
+    border-color: #ddd;
+}
+
+form .col-md-3:nth-of-type(1) {
+    padding-left: 0;
+}
+
+.col-md-10 h1 {
+    border-bottom: 1px solid;
+    border-color: #ddd;
+    padding: 15px;
+    padding-left: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.col-md-10 h1 .btn {
+    margin: 0;
+
+}
+
+.col-md-10 ul li {
+
+    width: 35%;
+}
+
+/*nav*/
+.nav {
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    background-color: #fff;
+}
+
+.nav .active {
+    background-color: #4A89DC;
+}
+
+.nav li {
+    width: 100%;
+    background-color: #eee;
+    transform-origin: left;
+    transition: all 1s ease-in-out;
+    /*background-color: #5D9CEC;*/
+}
+
+.nav li:first-child {
+    border-bottom: 2px solid #286090;
+}
+
+.nav li a {
+    padding: 15px 0;
+    color: #fff;
+    font-weight: bold;
+
+}
+
+.nav li a:hover {
+    background-color: #4A89DC;
+}
+
+.nav-stacked > li + li {
+    margin-top: 0;
+}
+
+.control {
+    display: block;
+    margin-top: 10px;
+}
+
+.control button:nth-of-type(2) {
+    margin-left: 0;
+}
+
+.page-switch {
+    width: 16%;
+    display: inline-table;
+    vertical-align: bottom;
+}
+
+.news-content {
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.table-responsive {
+    margin-top: 8px;
+}
+
+.table-responsive h4 {
+    padding: 15px 0;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: #ddd;
+    font-weight: bold;
+}
+
+.user-account input,
+.user-name input, .user-sex input,
+.user-password input {
+    max-width: 120px;
+    max-height: 30px;
+}
+.user-mail input {
+    max-width: 140px;
+    max-height: 30px;
+}
+
+.user-edit {
+    font-size: 20px;
+    line-height: 0;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.table thead {
+    margin-bottom: 3px;
+    background-color: #fff;
+}
+
+.table > thead > tr > th {
+    border-bottom: 0;
+    line-height: 1em;
+}
+
+.table > thead > tr > th:first-child {
+    width: 8%;
+}
+
+.table > tbody > tr {
+    background-color: #fff;
+}
+
+.table > tbody > tr > th {
+    vertical-align: middle;
+}
+
+.table > tbody > tr > th:nth-of-type(1) {
+    text-align: left;
+}
+
+.table > tbody > tr > td {
+    border-top: 3px solid #f2f2f2;
+    line-height: 1em;
+    vertical-align: middle;
+    width: 15%;
+}
+
+.table > tbody > tr > td:nth-of-type(1) {
+    text-align: left;
+    width: 8%;
+}
+
+.table > tbody > tr > td input[type=text] {
+    display: none;
+    text-align: center;
+    width: 80%;
+}
+
+/*modal*/
+.modal-title {
+    font-weight: bold;
+}
+
+#myEditor {
+    margin-left: 0;
+    width: 915px;
+    min-height: 400px;
+}
+
+.m-body{
+    width: 50%;
+    margin: 0 auto;
+}
+

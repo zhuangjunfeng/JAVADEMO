@@ -9,7 +9,7 @@
 
 		<action name="addNews" class="newsAction" method="addNews">
 			<result name="success">
-				/success.html
+				/news.html
 			</result>
 			<result name="error">
 				/error.html

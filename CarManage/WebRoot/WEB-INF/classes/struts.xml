@@ -6,5 +6,134 @@
 		<result-types>
 			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
 		</result-types>
+		
+		<action name="addSysUser" class="sysUserAction" method="addSysUser">
+			<result name="success" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+			<result name="error" type="json">
+			<param name="excludeProperties">sysUserService</param>				
+			</result>
+		</action>
+		
+		<action name="addAuth" class="authAction" method="addAuth">
+			<result name="success" type="json">
+				<param name="excludeProperties">authService</param>
+			</result>
+			<result name="error" type="json">
+			<param name="excludeProperties">authService</param>				
+			</result>
+		</action>
+		
+		<action name="addMenu" class="menuAction" method="addMenu">
+			<result name="success" type="json">
+				<param name="excludeProperties">menuService</param>
+			</result>
+			<result name="error" type="json">
+			<param name="excludeProperties">menuService</param>				
+			</result>
+		</action>
+		
+		<action name="addRole" class="roleAction" method="addRole">
+			<result name="success" type="json">
+				<param name="excludeProperties">roleService</param>
+			</result>
+			<result name="error" type="json">
+			<param name="excludeProperties">roleService</param>				
+			</result>
+		</action>
+		
+		<action name="delSysUser" class="sysUserAction" method="delSysUser">
+			<result name="success" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>
+		
+		<action name="delAuth" class="authAction" method="delAuth">
+			<result name="success" type="json">
+				<param name="excludeProperties">authService</param>
+			</result>
+		</action>
+		
+		<action name="delMenu" class="menuAction" method="delMenu">
+			<result name="success" type="json">
+				<param name="excludeProperties">menuService</param>
+			</result>
+		</action>
+		
+		<action name="delRole" class="roleAction" method="delRole">
+			<result name="success" type="json">
+				<param name="excludeProperties">roleService</param>
+			</result>
+		</action>
+		
+		<action name="updateSysUser" class="sysUserAction" method="updateSysUser">
+		<result name="success" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>
+		
+		<action name="updateAuth" class="authAction" method="updateAuth">
+		<result name="success" type="json">
+				<param name="excludeProperties">authService</param>
+			</result>
+		</action>
+		
+		<action name="updateMenu" class="menuAction" method="updateMenu">
+		<result name="success" type="json">
+				<param name="excludeProperties">menuService</param>
+			</result>
+		</action>
+		
+		<action name="updateRole" class="roleAction" method="roleMenu">
+		<result name="success" type="json">
+				<param name="excludeProperties">roleService</param>
+			</result>
+		</action>
+		
+		<action name="querySysUser" class="sysUserAction" method="querySysUser">
+			<result name="success" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>
+		
+		<action name="queryAuth" class="authAction" method="queryAuth">
+			<result name="success" type="json">
+				<param name="excludeProperties">authService</param>
+			</result>
+		</action>
+		
+		<action name="queryMenu" class="menuAction" method="queryMenu">
+			<result name="success" type="json">
+				<param name="excludeProperties">menuService</param>
+			</result>
+		</action>
+		
+		<action name="queryRole" class="roleAction" method="queryRole">
+			<result name="success" type="json">
+				<param name="excludeProperties">roleService</param>
+			</result>
+		</action>
+		
+		<action name="querySingleSysUser" class="sysUserAction" method="querySingleSysUser">
+			<result name="success" type="json">
+				<param name="excludeProperties">sysUserService,userList</param>
+			</result>
+		</action>
+		
+		<action name="querySingleRole" class="roleAction" method="querySingleRole">
+			<result name="success" type="json">
+				<param name="excludeProperties">roleService,roleList</param>
+			</result>
+		</action>
+		
+		<action name="login" class="sysUserAction" method="login">
+			<result name="success" type="json">
+			<param name="excludeProperties">sysUserService,userList,password</param>
+			</result>
+			<result name="error" type="json">
+			<param name="excludeProperties">sysUserService,userList,password</param>				
+			</result>
+		</action>
 	</package>
 </struts>    

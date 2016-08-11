@@ -1,6 +1,5 @@
 package com.model;
 
-import java.math.BigDecimal;
 
 public class SysUser implements java.io.Serializable {
 
@@ -9,10 +8,10 @@ public class SysUser implements java.io.Serializable {
 	private String yhxm;
 	private String yhgs;
 	private String yhyx;
-	private String password;
-	private String yhqx;
+	private String yhmm;
+	private String yhjs;
 	private String yhzh;
-	private BigDecimal phonenumber;
+	private Integer sjhm;
 	private String yhxb;
 	
 	public Long getYhid() {
@@ -39,17 +38,17 @@ public class SysUser implements java.io.Serializable {
 	public void setYhyx(String yhyx) {
 		this.yhyx = yhyx;
 	}
-	public String getPassword() {
-		return password;
+	public String getYhmm() {
+		return yhmm;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setYhmm(String yhmm) {
+		this.yhmm = yhmm;
 	}
-	public String getYhqx() {
-		return yhqx;
+	public String getYhjs() {
+		return yhjs;
 	}
-	public void setYhqx(String yhqx) {
-		this.yhqx = yhqx;
+	public void setYhjs(String yhjs) {
+		this.yhjs = yhjs;
 	}
 	public String getYhzh() {
 		return yhzh;
@@ -57,11 +56,11 @@ public class SysUser implements java.io.Serializable {
 	public void setYhzh(String yhzh) {
 		this.yhzh = yhzh;
 	}
-	public BigDecimal getPhonenumber() {
-		return phonenumber;
+	public Integer getSjhm() {
+		return sjhm;
 	}
-	public void setPhonenumber(BigDecimal phonenumber) {
-		this.phonenumber = phonenumber;
+	public void setSjhm(Integer sjhm) {
+		this.sjhm = sjhm;
 	}
 	public String getYhxb() {
 		return yhxb;

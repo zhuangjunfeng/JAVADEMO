@@ -3,19 +3,19 @@ package com.model;
 public class Mechanism implements java.io.Serializable {
 
 	private static final long serialVersionUID = -4569152975201493201L;
-	private Long jgid;
+	private int jgid;
 	private String jgmc;
 	private String jglx;
 	private String jgdz;
 	private String qxdj;
-	private String jggs;
+	private String jgsd;
 	private Integer ygrs;
 	
-	public Long getJgid() {
+	public int getJgid() {
 		return jgid;
 	}
-	public void setJgid(Long jgid) {
-		this.jgid = jgid;
+	public void setJgid(int jgId) {
+		this.jgid = jgId;
 	}
 	public String getJgmc() {
 		return jgmc;
@@ -41,11 +41,11 @@ public class Mechanism implements java.io.Serializable {
 	public void setQxdj(String qxdj) {
 		this.qxdj = qxdj;
 	}
-	public String getJggs() {
-		return jggs;
+	public String getJgsd() {
+		return jgsd;
 	}
-	public void setJggs(String jggs) {
-		this.jggs = jggs;
+	public void setJgsd(String jgsd) {
+		this.jgsd = jgsd;
 	}
 	public Integer getYgrs() {
 		return ygrs;

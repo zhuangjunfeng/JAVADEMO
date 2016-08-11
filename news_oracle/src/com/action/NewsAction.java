@@ -20,7 +20,6 @@ public class NewsAction extends BaseAction
 	public int AnewsId;
 	private String msg;
 	private int totalRecords;
-
 	public List NewsList;
 	public List singleList;
 	
